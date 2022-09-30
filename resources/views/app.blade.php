@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>AlphaBotTracker</title>
+        <title>Alpha Bot Tracker</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+
+        <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet" />
 
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
@@ -14,6 +18,6 @@
         <script defer src="{{asset('js/app.js')}}"></script>
     </head>
     <body>
-        <div id="app"></div>
+        <div id="root"></div>
     </body>
 </html>
