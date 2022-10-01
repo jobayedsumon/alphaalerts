@@ -1380,51 +1380,6 @@ CIcon.displayName = 'CIcon';
 
 /***/ }),
 
-/***/ "./node_modules/@coreui/icons/js/free/cil-bell.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-bell.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilBell": () => (/* binding */ cilBell)
-/* harmony export */ });
-const cilBell = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M450.27,348.569,406.6,267.945V184c0-83.813-68.187-152-152-152s-152,68.187-152,152v83.945L58.928,348.568A24,24,0,0,0,80.031,384h86.935c-.238,2.636-.367,5.3-.367,8a88,88,0,0,0,176,0c0-2.7-.129-5.364-.367-8h86.935a24,24,0,0,0,21.1-35.431ZM310.6,392a56,56,0,1,1-111.419-8H310.018A56.14,56.14,0,0,1,310.6,392ZM93.462,352,134.6,276.055V184a120,120,0,0,1,240,0v92.055L415.736,352Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-calculator.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-calculator.js ***!
-  \**************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilCalculator": () => (/* binding */ cilCalculator)
-/* harmony export */ });
-const cilCalculator = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M472,40H40A24.028,24.028,0,0,0,16,64V448a24.028,24.028,0,0,0,24,24H472a24.028,24.028,0,0,0,24-24V64A24.028,24.028,0,0,0,472,40Zm-8,400H48V72H464Z' class='ci-primary'/><polygon fill='var(--ci-primary-color, currentColor)' points='152 240 184 240 184 200 224 200 224 168 184 168 184 128 152 128 152 168 112 168 112 200 152 200 152 240' class='ci-primary'/><polygon fill='var(--ci-primary-color, currentColor)' points='196.284 285.089 168 313.373 139.716 285.089 117.089 307.716 145.373 336 117.089 364.284 139.716 386.911 168 358.627 196.284 386.911 218.911 364.284 190.627 336 218.911 307.716 196.284 285.089' class='ci-primary'/><rect width='112' height='32' x='288' y='168' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='112' height='32' x='288' y='288' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='112' height='32' x='288' y='352' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-chart-pie.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-chart-pie.js ***!
-  \*************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilChartPie": () => (/* binding */ cilChartPie)
-/* harmony export */ });
-const cilChartPie = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M105.361,398.32A195.891,195.891,0,0,1,343.42,91.125L366.676,67.87A227.875,227.875,0,0,0,82.733,420.948,228.027,228.027,0,0,0,366.24,452.1l-23.312-23.312C267.9,472.768,169.657,462.617,105.361,398.32Z' class='ci-primary'/><path fill='var(--ci-primary-color, currentColor)' d='M468.916,353.07a243.542,243.542,0,0,0,0-186.459c-.885-2.136-1.806-4.251-2.747-6.354A242.246,242.246,0,0,0,416.11,87.571L404.8,76.257,393.483,87.571,221.213,259.84l172.63,172.631L404.8,443.424,416.11,432.11a242.218,242.218,0,0,0,49.452-71.358C466.716,358.212,467.844,355.657,468.916,353.07ZM404.359,121.95a211.57,211.57,0,0,1,0,275.781L266.468,259.84Z' class='ci-primary'/>"]
-
-/***/ }),
-
 /***/ "./node_modules/@coreui/icons/js/free/cil-code.js":
 /*!********************************************************!*\
   !*** ./node_modules/@coreui/icons/js/free/cil-code.js ***!
@@ -1440,51 +1395,6 @@ const cilCode = ["512 512","<polygon fill='var(--ci-primary-color, currentColor)
 
 /***/ }),
 
-/***/ "./node_modules/@coreui/icons/js/free/cil-comment-square.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-comment-square.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilCommentSquare": () => (/* binding */ cilCommentSquare)
-/* harmony export */ });
-const cilCommentSquare = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M496,496H448.771L379.249,368H40a24.028,24.028,0,0,1-24-24V40A24.028,24.028,0,0,1,40,16H472a24.028,24.028,0,0,1,24,24ZM48,336H398.284L464,456.993V48H48Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-credit-card.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-credit-card.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilCreditCard": () => (/* binding */ cilCreditCard)
-/* harmony export */ });
-const cilCreditCard = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M472,72H40A24.028,24.028,0,0,0,16,96V416a24.028,24.028,0,0,0,24,24H472a24.028,24.028,0,0,0,24-24V96A24.028,24.028,0,0,0,472,72Zm-8,32v64H48V104ZM48,408V232H464V408Z' class='ci-primary'/><rect width='64' height='32' x='88' y='312' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='64' height='32' x='184' y='312' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-cursor.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-cursor.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilCursor": () => (/* binding */ cilCursor)
-/* harmony export */ });
-const cilCursor = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M446.754,47.9a20.075,20.075,0,0,0-21.307-2.745L32,229.835v37l165.349,66.139L303.317,496h37L453.281,68.369A20.072,20.072,0,0,0,446.754,47.9ZM317.124,458.524l-98.473-151.5-148.9-59.561L415.779,85.044Z' class='ci-primary'/>"]
-
-/***/ }),
-
 /***/ "./node_modules/@coreui/icons/js/free/cil-description.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@coreui/icons/js/free/cil-description.js ***!
@@ -1497,66 +1407,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "cilDescription": () => (/* binding */ cilDescription)
 /* harmony export */ });
 const cilDescription = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M334.627,16H48V496H472V153.373ZM440,166.627V168H320V48h1.373ZM80,464V48H288V200H440V464Z' class='ci-primary'/><rect width='224' height='32' x='136' y='296' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='224' height='32' x='136' y='376' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-drop.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-drop.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilDrop": () => (/* binding */ cilDrop)
-/* harmony export */ });
-const cilDrop = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M394.633,220.663,269.475,25.174a16,16,0,0,0-26.95,0L117.364,220.665A170.531,170.531,0,0,0,84.1,322.3c0,94.785,77.113,171.9,171.9,171.9s171.9-77.113,171.9-171.9A170.519,170.519,0,0,0,394.633,220.663ZM256,462.2c-77.14,0-139.9-62.758-139.9-139.9a138.758,138.758,0,0,1,27.321-83.058q.319-.432.608-.884L256,63.475,367.967,238.359q.288.453.608.884A138.754,138.754,0,0,1,395.9,322.3C395.9,399.441,333.14,462.2,256,462.2Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-envelope-open.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-envelope-open.js ***!
-  \*****************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilEnvelopeOpen": () => (/* binding */ cilEnvelopeOpen)
-/* harmony export */ });
-const cilEnvelopeOpen = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M274.6,25.623a32.006,32.006,0,0,0-37.2,0L16,183.766V496H496V183.766ZM464,402.693,339.97,322.96,464,226.492ZM256,51.662,454.429,193.4,311.434,304.615,256,268.979l-55.434,35.636L57.571,193.4ZM48,226.492,172.03,322.96,48,402.693ZM464,464H48V440.735L256,307.021,464,440.735Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-file.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-file.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilFile": () => (/* binding */ cilFile)
-/* harmony export */ });
-const cilFile = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M334.627,16H48V496H472V153.373ZM440,166.627V168H320V48h1.373ZM80,464V48H288V200H440V464Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-list.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-list.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilList": () => (/* binding */ cilList)
-/* harmony export */ });
-const cilList = ["512 512","<rect width='264' height='32' x='208' y='80' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><path fill='var(--ci-primary-color, currentColor)' d='M40,96a64,64,0,1,0,64-64A64.072,64.072,0,0,0,40,96Zm64-32A32,32,0,1,1,72,96,32.036,32.036,0,0,1,104,64Z' class='ci-primary'/><rect width='264' height='32' x='208' y='240' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><path fill='var(--ci-primary-color, currentColor)' d='M104,320a64,64,0,1,0-64-64A64.072,64.072,0,0,0,104,320Zm0-96a32,32,0,1,1-32,32A32.036,32.036,0,0,1,104,224Z' class='ci-primary'/><rect width='264' height='32' x='208' y='400' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><path fill='var(--ci-primary-color, currentColor)' d='M104,480a64,64,0,1,0-64-64A64.072,64.072,0,0,0,104,480Zm0-96a32,32,0,1,1-32,32A32.036,32.036,0,0,1,104,384Z' class='ci-primary'/>"]
 
 /***/ }),
 
@@ -1605,66 +1455,6 @@ const cilMenu = ["512 512","<rect width='352' height='32' x='80' y='96' fill='va
 
 /***/ }),
 
-/***/ "./node_modules/@coreui/icons/js/free/cil-notes.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-notes.js ***!
-  \*********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilNotes": () => (/* binding */ cilNotes)
-/* harmony export */ });
-const cilNotes = ["512 512","<rect width='288' height='32' x='112' y='152' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='288' height='32' x='112' y='240' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='152' height='32' x='112' y='328' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><path fill='var(--ci-primary-color, currentColor)' d='M480,48H32V464H480ZM448,432H64V80H448Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-pencil.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-pencil.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilPencil": () => (/* binding */ cilPencil)
-/* harmony export */ });
-const cilPencil = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M29.663,482.25l.087.087a24.847,24.847,0,0,0,17.612,7.342,25.178,25.178,0,0,0,8.1-1.345l142.006-48.172,272.5-272.5A88.832,88.832,0,0,0,344.334,42.039l-272.5,272.5L23.666,456.541A24.844,24.844,0,0,0,29.663,482.25Zm337.3-417.584a56.832,56.832,0,0,1,80.371,80.373L411.5,180.873,331.127,100.5ZM99.744,331.884,308.5,123.127,388.873,203.5,180.116,412.256,58.482,453.518Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-puzzle.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-puzzle.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilPuzzle": () => (/* binding */ cilPuzzle)
-/* harmony export */ });
-const cilPuzzle = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M491.693,256.705l-54.957-49.461,16.407-13.406a80.491,80.491,0,0,0,18.363-21.522c18.148-31.441,12.867-70.042-13.144-96.052S393.75,44.973,362.311,63.122a80.513,80.513,0,0,0-21.52,18.362L327.383,97.891,277.922,42.935l-.579-.611a24.028,24.028,0,0,0-33.941,0l-65.6,65.605,1.19,23.7L212.1,158.685a48.6,48.6,0,0,1,11.079,12.889c10.807,18.722,7.57,41.8-8.056,57.426s-38.7,18.862-57.426,8.058a48.66,48.66,0,0,1-12.9-11.086l-27.047-33.1-23.7-1.189-71.26,71.26a24,24,0,0,0,0,33.942L198.147,472.244a80,80,0,0,0,113.138,0L492.3,291.225a24.029,24.029,0,0,0,0-33.94ZM288.657,449.617a48,48,0,0,1-67.883,0L51.069,279.911l53.1-53.095,15.91,19.473.1.119a80.487,80.487,0,0,0,21.521,18.363c31.441,18.149,70.041,12.867,96.052-13.144s31.291-64.61,13.143-96.05a80.482,80.482,0,0,0-18.363-21.521l-19.591-16.01,47.124-47.124,56.018,62.241,24.282-.579,25.062-30.67a48.611,48.611,0,0,1,12.888-11.078c18.722-10.807,41.8-7.569,57.426,8.056s18.864,38.7,8.057,57.426a48.591,48.591,0,0,1-11.079,12.889l-30.67,25.061-.58,24.282,62.243,56.018Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-settings.js":
-/*!************************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-settings.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilSettings": () => (/* binding */ cilSettings)
-/* harmony export */ });
-const cilSettings = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M245.151,168a88,88,0,1,0,88,88A88.1,88.1,0,0,0,245.151,168Zm0,144a56,56,0,1,1,56-56A56.063,56.063,0,0,1,245.151,312Z' class='ci-primary'/><path fill='var(--ci-primary-color, currentColor)' d='M464.7,322.319l-31.77-26.153a193.081,193.081,0,0,0,0-80.332l31.77-26.153a19.941,19.941,0,0,0,4.606-25.439l-32.612-56.483a19.936,19.936,0,0,0-24.337-8.73l-38.561,14.447a192.038,192.038,0,0,0-69.54-40.192L297.49,32.713A19.936,19.936,0,0,0,277.762,16H212.54a19.937,19.937,0,0,0-19.728,16.712L186.05,73.284a192.03,192.03,0,0,0-69.54,40.192L77.945,99.027a19.937,19.937,0,0,0-24.334,8.731L21,164.245a19.94,19.94,0,0,0,4.61,25.438l31.767,26.151a193.081,193.081,0,0,0,0,80.332l-31.77,26.153A19.942,19.942,0,0,0,21,347.758l32.612,56.483a19.937,19.937,0,0,0,24.337,8.73l38.562-14.447a192.03,192.03,0,0,0,69.54,40.192l6.762,40.571A19.937,19.937,0,0,0,212.54,496h65.222a19.936,19.936,0,0,0,19.728-16.712l6.763-40.572a192.038,192.038,0,0,0,69.54-40.192l38.564,14.449a19.938,19.938,0,0,0,24.334-8.731L469.3,347.755A19.939,19.939,0,0,0,464.7,322.319Zm-50.636,57.12-48.109-18.024-7.285,7.334a159.955,159.955,0,0,1-72.625,41.973l-10,2.636L267.6,464h-44.89l-8.442-50.642-10-2.636a159.955,159.955,0,0,1-72.625-41.973l-7.285-7.334L76.241,379.439,53.8,340.562l39.629-32.624-2.7-9.973a160.9,160.9,0,0,1,0-83.93l2.7-9.972L53.8,171.439l22.446-38.878,48.109,18.024,7.285-7.334a159.955,159.955,0,0,1,72.625-41.973l10-2.636L222.706,48H267.6l8.442,50.642,10,2.636a159.955,159.955,0,0,1,72.625,41.973l7.285,7.334,48.109-18.024,22.447,38.877-39.629,32.625,2.7,9.972a160.9,160.9,0,0,1,0,83.93l-2.7,9.973,39.629,32.623Z' class='ci-primary'/>"]
-
-/***/ }),
-
 /***/ "./node_modules/@coreui/icons/js/free/cil-speedometer.js":
 /*!***************************************************************!*\
   !*** ./node_modules/@coreui/icons/js/free/cil-speedometer.js ***!
@@ -1692,21 +1482,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "cilStar": () => (/* binding */ cilStar)
 /* harmony export */ });
 const cilStar = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M494,198.671a40.536,40.536,0,0,0-32.174-27.592L345.917,152.242,292.185,47.828a40.7,40.7,0,0,0-72.37,0L166.083,152.242,50.176,171.079a40.7,40.7,0,0,0-22.364,68.827l82.7,83.368-17.9,116.055a40.672,40.672,0,0,0,58.548,42.538L256,428.977l104.843,52.89a40.69,40.69,0,0,0,58.548-42.538l-17.9-116.055,82.7-83.368A40.538,40.538,0,0,0,494,198.671Zm-32.53,18.7L367.4,312.2l20.364,132.01a8.671,8.671,0,0,1-12.509,9.088L256,393.136,136.744,453.3a8.671,8.671,0,0,1-12.509-9.088L144.6,312.2,50.531,217.37a8.7,8.7,0,0,1,4.778-14.706L187.15,181.238,248.269,62.471a8.694,8.694,0,0,1,15.462,0L324.85,181.238l131.841,21.426A8.7,8.7,0,0,1,461.469,217.37Z' class='ci-primary'/>"]
-
-/***/ }),
-
-/***/ "./node_modules/@coreui/icons/js/free/cil-task.js":
-/*!********************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-task.js ***!
-  \********************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilTask": () => (/* binding */ cilTask)
-/* harmony export */ });
-const cilTask = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M222.085,235.644l-62.01-62.01L81.8,251.905l62.009,62.01-.04.04,66.958,66.957,11.354,11.275.04.039,66.957-66.957,11.273-11.354L502.628,111.644,424.356,33.373Zm44.33,66.958-11.274,11.353h0l-33.057,33.056-.04-.039-33.017-33.017.04-.04-62.009-62.01,33.016-33.016,62.01,62.009L424.356,78.627l33.017,33.017Z' class='ci-primary'/><polygon fill='var(--ci-primary-color, currentColor)' points='448 464 48 464 48 64 348.22 64 380.22 32 16 32 16 496 480 496 480 179.095 448 211.095 448 464' class='ci-primary'/>"]
 
 /***/ }),
 
@@ -11591,16 +11366,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @coreui/icons-react */ "./node_modules/@coreui/icons-react/dist/index.es.js");
 /* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-speedometer.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-drop.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-pencil.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-puzzle.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-cursor.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-notes.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-chart-pie.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-star.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-bell.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-calculator.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-description.js");
+/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-star.js");
+/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-description.js");
 /* harmony import */ var _coreui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @coreui/react */ "./node_modules/@coreui/react/dist/index.es.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
@@ -11615,260 +11382,285 @@ var _nav = [{
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
     icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_4__.cilSpeedometer,
     customClassName: "nav-icon"
-  }),
-  badge: {
-    color: 'info',
-    text: 'NEW'
-  }
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavTitle,
-  name: 'Theme'
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-  name: 'Colors',
-  to: '/theme/colors',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_5__.cilDrop,
-    customClassName: "nav-icon"
-  })
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-  name: 'Typography',
-  to: '/theme/typography',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_6__.cilPencil,
-    customClassName: "nav-icon"
-  })
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavTitle,
-  name: 'Components'
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavGroup,
-  name: 'Base',
-  to: '/base',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_7__.cilPuzzle,
-    customClassName: "nav-icon"
-  }),
-  items: [{
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Accordion',
-    to: '/base/accordion'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Breadcrumb',
-    to: '/base/breadcrumbs'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Cards',
-    to: '/base/cards'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Carousel',
-    to: '/base/carousels'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Collapse',
-    to: '/base/collapses'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'List group',
-    to: '/base/list-groups'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Navs & Tabs',
-    to: '/base/navs'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Pagination',
-    to: '/base/paginations'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Placeholders',
-    to: '/base/placeholders'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Popovers',
-    to: '/base/popovers'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Progress',
-    to: '/base/progress'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Spinners',
-    to: '/base/spinners'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Tables',
-    to: '/base/tables'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Tooltips',
-    to: '/base/tooltips'
-  }]
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavGroup,
-  name: 'Buttons',
-  to: '/buttons',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_8__.cilCursor,
-    customClassName: "nav-icon"
-  }),
-  items: [{
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Buttons',
-    to: '/buttons/buttons'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Buttons groups',
-    to: '/buttons/button-groups'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Dropdowns',
-    to: '/buttons/dropdowns'
-  }]
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavGroup,
-  name: 'Forms',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_9__.cilNotes,
-    customClassName: "nav-icon"
-  }),
-  items: [{
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Form Control',
-    to: '/forms/form-control'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Select',
-    to: '/forms/select'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Checks & Radios',
-    to: '/forms/checks-radios'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Range',
-    to: '/forms/range'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Input Group',
-    to: '/forms/input-group'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Floating Labels',
-    to: '/forms/floating-labels'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Layout',
-    to: '/forms/layout'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Validation',
-    to: '/forms/validation'
-  }]
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-  name: 'Charts',
-  to: '/charts',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_10__.cilChartPie,
-    customClassName: "nav-icon"
-  })
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavGroup,
-  name: 'Icons',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_11__.cilStar,
-    customClassName: "nav-icon"
-  }),
-  items: [{
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'CoreUI Free',
-    to: '/icons/coreui-icons',
-    badge: {
-      color: 'success',
-      text: 'NEW'
-    }
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'CoreUI Flags',
-    to: '/icons/flags'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'CoreUI Brands',
-    to: '/icons/brands'
-  }]
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavGroup,
-  name: 'Notifications',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_12__.cilBell,
-    customClassName: "nav-icon"
-  }),
-  items: [{
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Alerts',
-    to: '/notifications/alerts'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Badges',
-    to: '/notifications/badges'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Modal',
-    to: '/notifications/modals'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Toasts',
-    to: '/notifications/toasts'
-  }]
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-  name: 'Widgets',
-  to: '/widgets',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_13__.cilCalculator,
-    customClassName: "nav-icon"
-  }),
-  badge: {
-    color: 'info',
-    text: 'NEW'
-  }
-}, {
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavTitle,
-  name: 'Extras'
-}, {
+  }) // badge: {
+  //   color: 'info',
+  //   text: 'NEW',
+  // },
+
+}, // {
+//   component: CNavTitle,
+//   name: 'Theme',
+// },
+// {
+//   component: CNavItem,
+//   name: 'Colors',
+//   to: '/theme/colors',
+//   icon: <CIcon icon={cilDrop} customClassName="nav-icon" />,
+// },
+// {
+//   component: CNavItem,
+//   name: 'Typography',
+//   to: '/theme/typography',
+//   icon: <CIcon icon={cilPencil} customClassName="nav-icon" />,
+// },
+// {
+//   component: CNavTitle,
+//   name: 'Components',
+// },
+// {
+//   component: CNavGroup,
+//   name: 'Base',
+//   to: '/base',
+//   icon: <CIcon icon={cilPuzzle} customClassName="nav-icon" />,
+//   items: [
+//     {
+//       component: CNavItem,
+//       name: 'Accordion',
+//       to: '/base/accordion',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Breadcrumb',
+//       to: '/base/breadcrumbs',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Cards',
+//       to: '/base/cards',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Carousel',
+//       to: '/base/carousels',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Collapse',
+//       to: '/base/collapses',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'List group',
+//       to: '/base/list-groups',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Navs & Tabs',
+//       to: '/base/navs',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Pagination',
+//       to: '/base/paginations',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Placeholders',
+//       to: '/base/placeholders',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Popovers',
+//       to: '/base/popovers',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Progress',
+//       to: '/base/progress',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Spinners',
+//       to: '/base/spinners',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Tables',
+//       to: '/base/tables',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Tooltips',
+//       to: '/base/tooltips',
+//     },
+//   ],
+// },
+// {
+//   component: CNavGroup,
+//   name: 'Buttons',
+//   to: '/buttons',
+//   icon: <CIcon icon={cilCursor} customClassName="nav-icon" />,
+//   items: [
+//     {
+//       component: CNavItem,
+//       name: 'Buttons',
+//       to: '/buttons/buttons',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Buttons groups',
+//       to: '/buttons/button-groups',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Dropdowns',
+//       to: '/buttons/dropdowns',
+//     },
+//   ],
+// },
+// {
+//   component: CNavGroup,
+//   name: 'Forms',
+//   icon: <CIcon icon={cilNotes} customClassName="nav-icon" />,
+//   items: [
+//     {
+//       component: CNavItem,
+//       name: 'Form Control',
+//       to: '/forms/form-control',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Select',
+//       to: '/forms/select',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Checks & Radios',
+//       to: '/forms/checks-radios',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Range',
+//       to: '/forms/range',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Input Group',
+//       to: '/forms/input-group',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Floating Labels',
+//       to: '/forms/floating-labels',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Layout',
+//       to: '/forms/layout',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Validation',
+//       to: '/forms/validation',
+//     },
+//   ],
+// },
+// {
+//   component: CNavItem,
+//   name: 'Charts',
+//   to: '/charts',
+//   icon: <CIcon icon={cilChartPie} customClassName="nav-icon" />,
+// },
+// {
+//   component: CNavGroup,
+//   name: 'Icons',
+//   icon: <CIcon icon={cilStar} customClassName="nav-icon" />,
+//   items: [
+//     {
+//       component: CNavItem,
+//       name: 'CoreUI Free',
+//       to: '/icons/coreui-icons',
+//       badge: {
+//         color: 'success',
+//         text: 'NEW',
+//       },
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'CoreUI Flags',
+//       to: '/icons/flags',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'CoreUI Brands',
+//       to: '/icons/brands',
+//     },
+//   ],
+// },
+// {
+//   component: CNavGroup,
+//   name: 'Notifications',
+//   icon: <CIcon icon={cilBell} customClassName="nav-icon" />,
+//   items: [
+//     {
+//       component: CNavItem,
+//       name: 'Alerts',
+//       to: '/notifications/alerts',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Badges',
+//       to: '/notifications/badges',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Modal',
+//       to: '/notifications/modals',
+//     },
+//     {
+//       component: CNavItem,
+//       name: 'Toasts',
+//       to: '/notifications/toasts',
+//     },
+//   ],
+// },
+// {
+//   component: CNavItem,
+//   name: 'Widgets',
+//   to: '/widgets',
+//   icon: <CIcon icon={cilCalculator} customClassName="nav-icon" />,
+//   badge: {
+//     color: 'info',
+//     text: 'NEW',
+//   },
+// },
+// {
+//   component: CNavTitle,
+//   name: 'Extras',
+// },
+{
   component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavGroup,
   name: 'Pages',
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_11__.cilStar,
+    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_5__.cilStar,
     customClassName: "nav-icon"
   }),
   items: [{
     component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
     name: 'Login',
     to: '/login'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Register',
-    to: '/register'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Error 404',
-    to: '/404'
-  }, {
-    component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-    name: 'Error 500',
-    to: '/500'
-  }]
+  } // {
+  //   component: CNavItem,
+  //   name: 'Register',
+  //   to: '/register',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Error 404',
+  //   to: '/404',
+  // },
+  // {
+  //   component: CNavItem,
+  //   name: 'Error 500',
+  //   to: '/500',
+  // },
+  ]
 }, {
   component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
   name: 'Docs',
   href: 'https://coreui.io/react/docs/templates/installation/',
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_14__.cilDescription,
+    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_6__.cilDescription,
     customClassName: "nav-icon"
   })
 }];
@@ -11948,7 +11740,7 @@ var DefaultLayout = function DefaultLayout() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ui_components_index__WEBPACK_IMPORTED_MODULE_1__.AppHeader, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "body flex-grow-1 px-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ui_components_index__WEBPACK_IMPORTED_MODULE_1__.AppContent, {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_ui_components_index__WEBPACK_IMPORTED_MODULE_1__.AppFooter, {})]
+      })]
     })]
   });
 };
@@ -12472,14 +12264,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _coreui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @coreui/react */ "./node_modules/@coreui/react/dist/index.es.js");
 /* harmony import */ var _coreui_icons_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @coreui/icons-react */ "./node_modules/@coreui/icons-react/dist/index.es.js");
 /* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-menu.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-bell.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-list.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-envelope-open.js");
 /* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./index */ "./resources/js/components/ui-components/index.js");
 /* harmony import */ var _header_index__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./header/index */ "./resources/js/components/ui-components/header/index.js");
 /* harmony import */ var _assets_brand_logo__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../assets/brand/logo */ "./resources/js/components/assets/brand/logo.js");
@@ -12526,51 +12314,6 @@ var AppHeader = function AppHeader() {
           height: 48,
           alt: "Logo"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderNav, {
-        className: "d-none d-md-flex me-auto",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavLink, {
-            to: "/dashboard",
-            component: react_router_dom__WEBPACK_IMPORTED_MODULE_9__.NavLink,
-            children: "Dashboard"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavLink, {
-            href: "#",
-            children: "Users"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavLink, {
-            href: "#",
-            children: "Settings"
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderNav, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavLink, {
-            href: "#",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-              icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_10__.cilBell,
-              size: "lg"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavLink, {
-            href: "#",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-              icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_11__.cilList,
-              size: "lg"
-            })
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavLink, {
-            href: "#",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-              icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_12__.cilEnvelopeOpen,
-              size: "lg"
-            })
-          })
-        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderNav, {
         className: "ms-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_header_index__WEBPACK_IMPORTED_MODULE_5__.AppHeaderDropdown, {})
@@ -12984,15 +12727,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _coreui_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @coreui/react */ "./node_modules/@coreui/react/dist/index.es.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-bell.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-envelope-open.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-task.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-comment-square.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-user.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-settings.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-credit-card.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-file.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-lock-locked.js");
+/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-user.js");
+/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-lock-locked.js");
 /* harmony import */ var _coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @coreui/icons-react */ "./node_modules/@coreui/icons-react/dist/index.es.js");
 /* harmony import */ var _assets_images_avatars_8_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../assets/images/avatars/8.jpg */ "./resources/js/components/assets/images/avatars/8.jpg");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -13020,88 +12756,19 @@ var AppHeaderDropdown = function AppHeaderDropdown() {
       placement: "bottom-end",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownHeader, {
         className: "bg-light fw-semibold py-2",
-        children: "Account"
+        children: "Jobayed Sumon"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
         href: "#",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_5__.cilBell,
-          className: "me-2"
-        }), "Updates", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CBadge, {
-          color: "info",
-          className: "ms-2",
-          children: "42"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
-        href: "#",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_6__.cilEnvelopeOpen,
-          className: "me-2"
-        }), "Messages", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CBadge, {
-          color: "success",
-          className: "ms-2",
-          children: "42"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
-        href: "#",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_7__.cilTask,
-          className: "me-2"
-        }), "Tasks", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CBadge, {
-          color: "danger",
-          className: "ms-2",
-          children: "42"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
-        href: "#",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_8__.cilCommentSquare,
-          className: "me-2"
-        }), "Comments", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CBadge, {
-          color: "warning",
-          className: "ms-2",
-          children: "42"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownHeader, {
-        className: "bg-light fw-semibold py-2",
-        children: "Settings"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
-        href: "#",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_9__.cilUser,
+          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_5__.cilUser,
           className: "me-2"
         }), "Profile"]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
-        href: "#",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_10__.cilSettings,
-          className: "me-2"
-        }), "Settings"]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
-        href: "#",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_11__.cilCreditCard,
-          className: "me-2"
-        }), "Payments", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CBadge, {
-          color: "secondary",
-          className: "ms-2",
-          children: "42"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
-        href: "#",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_12__.cilFile,
-          className: "me-2"
-        }), "Projects", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CBadge, {
-          color: "primary",
-          className: "ms-2",
-          children: "42"
-        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownDivider, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownItem, {
         href: "#",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_13__.cilLockLocked,
+          icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_6__.cilLockLocked,
           className: "me-2"
-        }), "Lock Account"]
+        }), "Logout"]
       })]
     })]
   });
