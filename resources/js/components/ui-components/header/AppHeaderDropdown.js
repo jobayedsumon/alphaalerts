@@ -23,12 +23,15 @@ import {
 import CIcon from '@coreui/icons-react'
 
 import avatar8 from './../../assets/images/avatars/8.jpg'
+import {logout} from "../../helpers/authHelper";
 
 const AppHeaderDropdown = () => {
+    const user = JSON.parse(localStorage.getItem('user'));
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
-        <CAvatar src={avatar8} size="md" />
+          <CIcon icon={cilUser} size="lg" />
+        {/*<CAvatar src={avatar8} size="md" />*/}
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
         {/*<CDropdownHeader className="bg-light fw-semibold py-2">Account</CDropdownHeader>*/}
@@ -60,8 +63,11 @@ const AppHeaderDropdown = () => {
         {/*    42*/}
         {/*  </CBadge>*/}
         {/*</CDropdownItem>*/}
-        <CDropdownHeader className="bg-light fw-semibold py-2">Jobayed Sumon</CDropdownHeader>
-        <CDropdownItem href="#">
+        <CDropdownHeader className="bg-light fw-semibold py-2">
+            <div className="text-center">{user.name}</div>
+            <small>{user.email}</small>
+        </CDropdownHeader>
+        <CDropdownItem href="#" className="pt-2">
           <CIcon icon={cilUser} className="me-2" />
           Profile
         </CDropdownItem>
@@ -84,7 +90,7 @@ const AppHeaderDropdown = () => {
         {/*  </CBadge>*/}
         {/*</CDropdownItem>*/}
         <CDropdownDivider />
-        <CDropdownItem href="#">
+        <CDropdownItem href="#" onClick={logout}>
           <CIcon icon={cilLockLocked} className="me-2" />
           Logout
         </CDropdownItem>

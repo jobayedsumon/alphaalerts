@@ -17,8 +17,9 @@ const Register = React.lazy(() => import('./views/pages/register/Register'))
 const Page404 = React.lazy(() => import('./views/pages/page404/Page404'))
 const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 
-class App extends Component {
-  render() {
+
+const App = () => {
+
     return (
       <HashRouter>
         <Suspense fallback={loading}>
@@ -32,7 +33,6 @@ class App extends Component {
         </Suspense>
       </HashRouter>
     )
-  }
 }
 
 export default App
