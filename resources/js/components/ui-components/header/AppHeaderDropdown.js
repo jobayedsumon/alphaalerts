@@ -24,9 +24,15 @@ import CIcon from '@coreui/icons-react'
 
 import avatar8 from './../../assets/images/avatars/8.jpg'
 import {logout} from "../../helpers/authHelper";
+import {useDispatch, useSelector} from "react-redux";
 
 const AppHeaderDropdown = () => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const dispatch = useDispatch();
+    const user = useSelector(state => state.user);
+    const logoutHandler = () => {
+        dispatch({type: 'set', user: null, token: null});
+        logout();
+    }
   return (
     <CDropdown variant="nav-item">
       <CDropdownToggle placement="bottom-end" className="py-0" caret={false}>
@@ -90,7 +96,7 @@ const AppHeaderDropdown = () => {
         {/*  </CBadge>*/}
         {/*</CDropdownItem>*/}
         <CDropdownDivider />
-        <CDropdownItem href="#" onClick={logout}>
+        <CDropdownItem href="#" onClick={logoutHandler}>
           <CIcon icon={cilLockLocked} className="me-2" />
           Logout
         </CDropdownItem>

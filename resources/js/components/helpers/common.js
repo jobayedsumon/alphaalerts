@@ -17,3 +17,14 @@ export const swalError = (text) => {
         confirmButtonText: 'Ok'
     });
 }
+
+export const swalConfirm = () => {
+    return Swal.fire({
+        title: "Are you sure?",
+        text: 'You will not be able to recover this data!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'No'
+    });
+}

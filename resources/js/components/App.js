@@ -1,6 +1,7 @@
-import React, { Component, Suspense } from 'react'
+import React, {Component, Suspense, useEffect} from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './scss/style.scss'
+import fetchWrapper from "./helpers/fetchWrapper";
 
 const loading = (
   <div className="pt-3 text-center">

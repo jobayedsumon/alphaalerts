@@ -1,19 +1,21 @@
 import React from 'react'
 import CIcon from '@coreui/icons-react'
 import {
-  cilBell,
-  cilCalculator,
-  cilChartPie,
-  cilCursor,
-  cilDescription,
-  cilDrop,
-  cilNotes,
-  cilPencil,
-  cilPuzzle,
-  cilSpeedometer,
-  cilStar,
+    cibDiscord,
+    cilBell,
+    cilCalculator,
+    cilChartPie,
+    cilCursor,
+    cilDescription,
+    cilDrop,
+    cilNotes,
+    cilPencil,
+    cilPuzzle,
+    cilSpeedometer,
+    cilStar,
 } from '@coreui/icons'
 import { CNavGroup, CNavItem, CNavTitle } from '@coreui/react'
+import {isAdmin} from "./helpers/authHelper";
 
 const _nav = [
   {
@@ -299,7 +301,14 @@ const _nav = [
     name: 'Projects',
     to: '/projects',
     icon: <CIcon icon={cilDescription} customClassName="nav-icon" />,
+      is_admin: 'true',
   },
+    {
+        component: CNavItem,
+        name: 'Discord',
+        to: '/discord',
+        icon: <CIcon icon={cibDiscord} customClassName="nav-icon" />,
+    },
 ]
 
 export default _nav

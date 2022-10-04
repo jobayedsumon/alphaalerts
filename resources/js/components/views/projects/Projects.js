@@ -1,57 +1,81 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import DataTable from 'react-data-table-component';
 import CustomTable from "../../common-components/CustomTable";
 import {Link} from "react-router-dom";
+import fetchWrapper from "../../helpers/fetchWrapper";
+import {CButton} from "@coreui/react";
+import {swalConfirm, swalError, swalSuccess} from "../../helpers/common";
 
-const columns = [
-    {
-        name: 'Projects',
-        selector: row => row.project_name,
-        sortable: true,
-    },
-    {
-        name: 'Server ID',
-        selector: row => row.server_id,
-        sortable: true,
-    },
-    {
-        name: 'Channel IDs',
-        selector: row => row.channel_ids,
-        sortable: true,
-    },
-    {
-        name: 'Actions',
-        selector: row => <div>
-            <Link to={`/projects/${row.id}/edit`} className="btn btn-primary btn-sm">
-                <i className="fa fa-edit"></i>
-            </Link>
-            <button className="btn btn-danger btn-sm mx-2">
-                <i className="fa fa-trash"></i>
-            </button>
-        </div>,
-    },
-];
-
-const data = [
-    {
-        id: 1,
-        project_name: 'Beetlejuice',
-        server_id: '123456789',
-        channel_ids: '123456789, 987654321',
-    },
-    {
-        id: 2,
-        project_name: 'Beetlejuice',
-        server_id: '123456789',
-        channel_ids: '123456789, 987654321',
-    },
-]
 
 const Projects = () => {
 
+    const [projects, setProjects] = React.useState([]);
+
+    const fetchProjects = () => {
+        fetchWrapper.get('/api/projects').then((response) => {
+            const data = response.data;
+            if (data.status === 'success') {
+                setProjects(data.projects);
+            }
+        }).catch((error) => {
+
+        });
+    }
+
+    const handleDelete = (id) => {
+        swalConfirm().then((result) => {
+            if (result.isConfirmed) {
+                fetchWrapper.delete('/api/projects/' + id).then((response) => {
+                    const data = response.data;
+                    if (data.status === 'success') {
+                        swalSuccess("Project deleted successfully");
+                        fetchProjects();
+                    } else {
+                        swalError("Error deleting project");
+                    }
+                }).catch((error) => {
+                    swalError("Error deleting project");
+                });
+            }
+        });
+    }
+
+    const columns = [
+        {
+            name: 'Projects',
+            selector: row => row.project_name,
+            sortable: true,
+        },
+        {
+            name: 'Server ID',
+            selector: row => row.server_id,
+            sortable: true,
+        },
+        {
+            name: 'Channel IDs',
+            selector: row => row.channels.map(channel => channel.channel_id).join(','),
+            sortable: true,
+        },
+        {
+            name: 'Actions',
+            selector: row => <div>
+                <Link to={`/projects/${row.id}/edit`} className="btn btn-primary btn-sm">
+                    <i className="fa fa-edit"></i>
+                </Link>
+                <CButton className="btn btn-danger btn-sm mx-2" onClick={() => handleDelete(row.id)}>
+                    <i className="fa fa-trash"></i>
+                </CButton>
+            </div>,
+        },
+    ];
+
+    useEffect(() => {
+        fetchProjects();
+    }, [projects.length]);
+
     return (
         <>
-            <CustomTable title="Projects" columns={columns} data={data} createLink="/projects/create" />
+            <CustomTable title="Projects" columns={columns} data={projects} createLink="/projects/create" />
         </>
     )
 }

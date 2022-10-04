@@ -18,6 +18,19 @@ const AppSidebar = () => {
   const dispatch = useDispatch()
   const unfoldable = useSelector((state) => state.sidebarUnfoldable)
   const sidebarShow = useSelector((state) => state.sidebarShow)
+    const user = useSelector(state => state.user);
+
+    const navigationItems = navigation.filter((item) => {
+        if (item.is_admin === 'true') {
+            if (user && user.is_admin === 1) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return true;
+        }
+    });
 
   return (
     <CSidebar
@@ -35,7 +48,7 @@ const AppSidebar = () => {
       </CSidebarBrand>
       <CSidebarNav>
         <SimpleBar>
-          <AppSidebarNav items={navigation} />
+          <AppSidebarNav items={navigationItems} />
         </SimpleBar>
       </CSidebarNav>
       <CSidebarToggler

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,5 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('login', [AuthController::class, 'login']);
+Route::post('wallet-connect', [AuthController::class, 'walletConnect']);
+Route::post('user', [AuthController::class, 'user']);
+
+Route::resource('projects', ProjectController::class);
 
 Route::get('user', [AuthController::class, 'user']);
