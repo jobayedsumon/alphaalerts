@@ -42,22 +42,22 @@ const Projects = () => {
 
     const columns = [
         {
-            name: 'Projects',
+            name: 'PROJECTS',
             selector: row => row.project_name,
             sortable: true,
         },
         {
-            name: 'Server ID',
+            name: 'SERVER ID',
             selector: row => row.server_id,
             sortable: true,
         },
         {
-            name: 'Channel IDs',
+            name: 'CHANNEL IDS',
             selector: row => row.channels.map(channel => channel.channel_id).join(','),
             sortable: true,
         },
         {
-            name: 'Actions',
+            name: 'ACTIONS',
             selector: row => <div>
                 <Link to={`/projects/${row.id}/edit`} className="btn btn-primary btn-sm">
                     <i className="fa fa-edit"></i>

@@ -10361,6 +10361,7 @@ var Login = function Login() {
       token: token
     });
     _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_7__["default"].defaults.headers.common.Authorization = 'Bearer ' + token;
+    localStorage.setItem('token', token);
   };
 
   var walletConnectHandler = function walletConnectHandler(e) {

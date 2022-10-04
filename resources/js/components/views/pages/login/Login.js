@@ -28,6 +28,7 @@ const Login = () => {
     const setUserToken = (user, token) => {
         dispatch({type: 'set', user: user, token: token});
         fetchWrapper.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+        localStorage.setItem('token', token);
     }
 
     const walletConnectHandler = (e) => {

@@ -1,6 +1,7 @@
 import React from 'react'
 import ProjectCreate from "./views/projects/ProjectCreate";
 import ProjectEdit from "./views/projects/ProjectEdit";
+import Discord from "./views/discord/Discord";
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Projects = React.lazy(() => import('./views/projects/Projects'))
@@ -59,6 +60,10 @@ const routes = [
   { path: '/projects', name: 'Projects', element: Projects },
   { path: '/projects/create', name: 'Create Project', element: ProjectCreate },
   { path: '/projects/:id/edit', name: 'Edit Project', element: ProjectEdit },
+  { path: '/discord', name: 'Discord Info', element: Discord },
+
+
+
   { path: '/theme', name: 'Theme', element: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', element: Colors },
   { path: '/theme/typography', name: 'Typography', element: Typography },
