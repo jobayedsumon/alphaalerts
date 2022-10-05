@@ -8710,8 +8710,9 @@ var isAdmin = function isAdmin() {
   return user && user.is_admin === 1;
 };
 var logout = function logout() {
+  localStorage.removeItem('token');
   delete _fetchWrapper__WEBPACK_IMPORTED_MODULE_0__["default"].defaults.headers.common.Authorization;
-  window.location.href = '/';
+  window.location.href = '/#/login';
 };
 
 /***/ }),

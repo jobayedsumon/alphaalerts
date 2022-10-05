@@ -13,7 +13,8 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "php-open-source-saver/jwt-auth": "^2.0",
-        "socialiteproviders/discord": "^4.1"
+        "socialiteproviders/discord": "^4.1",
+        "twilio/sdk": "^6.42"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('wallet_address')->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
+            $table->string('country_code')->nullable();
+            $table->string('phone_number')->nullable();
             $table->tinyInteger('is_admin')->default(0);
             $table->rememberToken();
             $table->timestamps();

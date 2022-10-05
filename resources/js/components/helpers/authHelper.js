@@ -62,6 +62,7 @@ export const isAdmin = () => {
 }
 
 export const logout = () => {
+    localStorage.removeItem('token');
     delete fetchWrapper.defaults.headers.common['Authorization'];
-    window.location.href = '/';
+    window.location.href = '/#/login';
 }

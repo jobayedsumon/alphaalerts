@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ChannelNotification;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class ProjectController extends Controller
@@ -108,5 +110,32 @@ class ProjectController extends Controller
             'status' => 'success',
             'message' => 'Project deleted successfully',
         ]);
+    }
+
+    public function notification(Request $request) {
+
+        if ($request->get ('notification')) {
+            $channel_notification = new ChannelNotification();
+            $channel_notification->user_id = Auth::user ()->id;
+            $channel_notification->server_name = $request->get ('server_name');
+            $channel_notification->channel_id = $request->get ('channel_id');
+            $channel_notification->last_message_id = $request->get ('last_message_id');
+            $channel_notification->save ();
+            return response ()->json ([
+                'status' => 'success',
+                'notification' => true,
+                'message' => 'Notification saved successfully',
+            ]);
+        } else {
+            $channel_notification = ChannelNotification::where('user_id', \auth ()->id ())->where('channel_id', $request->get ('channel_id'))->first();
+            if ($channel_notification) {
+                $channel_notification->delete ();
+            }
+            return response ()->json ([
+                'status' => 'success',
+                'notification' => false,
+                'message' => 'Notification deleted successfully',
+            ]);
+        }
     }
 }

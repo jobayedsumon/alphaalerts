@@ -8,12 +8,12 @@ const CustomTable = (props) => {
     const [resetPaginationToggle, setResetPaginationToggle] = React.useState(
         false
     );
-    const filteredItems = props.data.filter(
+    const filteredItems = props.data.length > 0 ? props.data.filter(
         item =>
             JSON.stringify(item)
                 .toLowerCase()
                 .indexOf(filterText.toLowerCase()) !== -1
-    );
+    ) : [];
 
     const subHeaderComponent = useMemo(() => {
         const handleClear = () => {

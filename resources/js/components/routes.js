@@ -2,6 +2,9 @@ import React from 'react'
 import ProjectCreate from "./views/projects/ProjectCreate";
 import ProjectEdit from "./views/projects/ProjectEdit";
 import Discord from "./views/discord/Discord";
+import DiscordServer from "./views/discord/DiscordServer";
+import DiscordChannel from "./views/discord/DiscordChannel";
+import Profile from "./views/Profile/Profile";
 
 const Dashboard = React.lazy(() => import('./views/dashboard/Dashboard'))
 const Projects = React.lazy(() => import('./views/projects/Projects'))
@@ -61,6 +64,9 @@ const routes = [
   { path: '/projects/create', name: 'Create Project', element: ProjectCreate },
   { path: '/projects/:id/edit', name: 'Edit Project', element: ProjectEdit },
   { path: '/discord', name: 'Discord Info', element: Discord },
+  { path: '/discord-server/:id', name: 'Discord Server', element: DiscordServer },
+  { path: '/discord-channel/:id', name: 'Discord Channel', element: DiscordChannel },
+  { path: '/profile', name: 'Profile', element: Profile },
 
 
 

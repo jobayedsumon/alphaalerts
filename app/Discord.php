@@ -19,9 +19,7 @@ class Discord
                 ],
             ]);
 
-
             $servers = json_decode($response->getBody()->getContents());
-
 
         } catch (\Exception $e) {
             $servers = [];
@@ -38,7 +36,7 @@ class Discord
 
             $response = $guzzle->request('GET', 'https://discord.com/api/v10/guilds/' . $guild_id . '/channels', [
                 'headers' => [
-                    'Authorization' => 'Bot ' . config('discord.bot_token'),
+                    'Authorization' => 'Bot ' . env('BOT_TOKEN'),
                 ],
             ]);
 
@@ -60,7 +58,7 @@ class Discord
 
             $response = $guzzle->request('GET', 'https://discord.com/api/v10/channels/' . $channel_id . '/messages', [
                 'headers' => [
-                    'Authorization' => 'Bot ' . config('discord.notify_bot_token'),
+                    'Authorization' => 'Bot ' . env('BOT_TOKEN'),
                 ],
             ]);
 
@@ -72,5 +70,43 @@ class Discord
         }
 
         return $messages;
+    }
+
+    public static function guildPreview($guild_id)
+    {
+        try {
+            $guzzle = new Client();
+            $response = $guzzle->request('GET', 'https://discord.com/api/v10/guilds/' . $guild_id . '/preview', [
+                'headers' => [
+                    'Authorization' => 'Bot ' . env('BOT_TOKEN'),
+                ],
+            ]);
+
+            $guild = json_decode($response->getBody()->getContents());
+
+        } catch (\Exception $ex) {
+            $guild = null;
+        }
+
+        return $guild;
+    }
+
+    public static function channel($channel_id)
+    {
+        try {
+            $guzzle = new Client();
+            $response = $guzzle->request('GET', 'https://discord.com/api/v10/channels/' . $channel_id, [
+                'headers' => [
+                    'Authorization' => 'Bot ' . config('discord.bot_token'),
+                ],
+            ]);
+
+            $channel = json_decode($response->getBody()->getContents());
+
+        } catch (\Exception $ex) {
+            $channel = null;
+        }
+
+        return $channel;
     }
 }

@@ -20,12 +20,18 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [AuthController::class, 'login']);
 Route::post('wallet-connect', [AuthController::class, 'walletConnect']);
 Route::post('user', [AuthController::class, 'user']);
+Route::put('profile', [AuthController::class, 'profile']);
 
+Route::post('notification', [ProjectController::class, 'notification']);
 Route::resource('projects', ProjectController::class);
 
 Route::get('discord-connect', [DiscordController::class, 'discordConnect']);
 Route::get('discord-callback', [DiscordController::class, 'discordCallback']);
 Route::get('discord-info', [DiscordController::class, 'discordInfo']);
+Route::get('discord-servers', [DiscordController::class, 'discordServers']);
+Route::get('guild-preview/{id}', [DiscordController::class, 'guildPreview']);
+Route::get('discord-channels/{id}', [DiscordController::class, 'discordChannels']);
+Route::get('discord-messages/{id}', [DiscordController::class, 'discordMessages']);
 Route::get('discord-disconnect', [DiscordController::class, 'discordDisconnect']);
 
 Route::get('user', [AuthController::class, 'user']);

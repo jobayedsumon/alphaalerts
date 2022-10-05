@@ -116,4 +116,35 @@ class AuthController extends Controller
             'token' => Auth::refresh(),
         ]);
     }
+
+    public function profile(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,id,'.Auth::user()->id,
+            'country_code' => 'required|string|max:255',
+            'phone_number' => 'required|string|max:255',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $validator->errors(),
+            ]);
+        }
+
+        $user = Auth::user();
+        $user->name = $request->get('name');
+        $user->email = $request->get('email');
+        $user->country_code = $request->get('country_code');
+        $user->phone_number = $request->get('phone_number');
+        $user->save();
+
+        return response()->json([
+            'status' => 'success',
+            'message' => 'Profile updated successfully',
+            'user' => $user,
+        ]);
+    }
+
 }

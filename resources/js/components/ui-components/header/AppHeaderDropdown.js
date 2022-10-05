@@ -73,7 +73,7 @@ const AppHeaderDropdown = () => {
             <div className="text-center">{user.name}</div>
             <small>{user.email}</small>
         </CDropdownHeader>
-        <CDropdownItem href="#" className="pt-2">
+        <CDropdownItem href="/#/profile" className="pt-2">
           <CIcon icon={cilUser} className="me-2" />
           Profile
         </CDropdownItem>
