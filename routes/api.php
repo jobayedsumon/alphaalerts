@@ -1,5 +1,6 @@
 <?php
 
+use App\Discord;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DiscordController;
 use App\Http\Controllers\ProjectController;
@@ -35,3 +36,4 @@ Route::get('discord-messages/{id}', [DiscordController::class, 'discordMessages'
 Route::get('discord-disconnect', [DiscordController::class, 'discordDisconnect']);
 
 Route::get('user', [AuthController::class, 'user']);
+

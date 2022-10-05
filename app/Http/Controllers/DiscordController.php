@@ -107,7 +107,7 @@ class DiscordController extends Controller
                 if (in_array($channel->id, $project_channels)) {
                     $guild = Discord::guildPreview($channel->guild_id);
                     $channel->server_name = $guild->name;
-                    $notification = ChannelNotification::where('user_id', \auth()->id())->where('channel_id', $channel->id)->first();
+                    $notification = ChannelNotification::where('user_id', Auth::user()->id)->where('channel_id', $channel->id)->first();
                     $channel->notification = (bool) $notification;
                     $channels[] = $channel;
                 }

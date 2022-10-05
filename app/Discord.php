@@ -97,7 +97,7 @@ class Discord
             $guzzle = new Client();
             $response = $guzzle->request('GET', 'https://discord.com/api/v10/channels/' . $channel_id, [
                 'headers' => [
-                    'Authorization' => 'Bot ' . config('discord.bot_token'),
+                    'Authorization' => 'Bot ' . env('BOT_TOKEN'),
                 ],
             ]);
 
