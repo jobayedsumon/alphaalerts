@@ -8778,12 +8778,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _authHelper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./authHelper */ "./resources/js/components/helpers/authHelper.js");
 
 
-var token = localStorage.getItem('token');
 var fetchWrapper = axios__WEBPACK_IMPORTED_MODULE_0___default().create({
   headers: {
     'Content-Type': 'application/json',
     'Accept': 'application/json',
-    'Authorization': 'Bearer ' + token
+    'Authorization': 'Bearer ' + localStorage.getItem('token')
   }
 });
 fetchWrapper.interceptors.response.use(function (response) {
