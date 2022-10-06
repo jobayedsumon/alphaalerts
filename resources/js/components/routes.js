@@ -60,9 +60,9 @@ const Widgets = React.lazy(() => import('./views/widgets/Widgets'))
 const routes = [
   { path: '/', exact: true, name: 'Home' },
   { path: '/dashboard', name: 'Dashboard', element: Dashboard },
-  { path: '/projects', name: 'Projects', element: Projects },
-  { path: '/projects/create', name: 'Create Project', element: ProjectCreate },
-  { path: '/projects/:id/edit', name: 'Edit Project', element: ProjectEdit },
+  { path: '/projects', name: 'Projects', element: Projects, admin: true },
+  { path: '/projects/create', name: 'Create Project', element: ProjectCreate, admin: true },
+  { path: '/projects/:id/edit', name: 'Edit Project', element: ProjectEdit, admin: true },
   { path: '/discord', name: 'Discord Info', element: Discord },
   { path: '/discord-server/:id', name: 'Discord Server', element: DiscordServer },
   { path: '/discord-channel/:id', name: 'Discord Channel', element: DiscordChannel },
