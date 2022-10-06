@@ -19,16 +19,19 @@ const AppContent = () => {
                                         path={route.path}
                                         exact={route.exact}
                                         name={route.name}
-                                        element={<route.element/>}
+                                        element={<route.element/>
+                                    }
                                     /> : isAdmin() && <Route
                                     key={idx}
                                     path={route.path}
                                     exact={route.exact}
                                     name={route.name}
-                                    element={<route.element/>}
+                                    element={<route.element/>
+                                    }
                                 />
                             )
                         )
+
                     })}
                     <Route path="/" element={<Navigate to="dashboard" replace/>}/>
                 </Routes>

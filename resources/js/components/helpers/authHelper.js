@@ -59,6 +59,7 @@ export const isLoggedIn = () => {
 export const isAdmin = () => {
     const user = useSelector(state => state.user);
     return user && user.is_admin === 1;
+
 }
 
 export const logout = () => {
