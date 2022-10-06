@@ -14134,11 +14134,7 @@ var AppHeader = function AppHeader() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderBrand, {
         className: "mx-auto d-md-none",
         to: "/",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          icon: _assets_brand_logo__WEBPACK_IMPORTED_MODULE_6__.logo,
-          height: 48,
-          alt: "Logo"
-        })
+        children: "Alpha Bot Tracker"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderNav, {
         className: "ms-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_header_index__WEBPACK_IMPORTED_MODULE_5__.AppHeaderDropdown, {})
