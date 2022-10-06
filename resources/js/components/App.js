@@ -45,7 +45,7 @@ const App = () => {
                 return Promise.reject(error);
             }
         );
-    }, [token]);
+    }, []);
 
     return (
       <HashRouter>
