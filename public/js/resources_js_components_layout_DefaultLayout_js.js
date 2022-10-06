@@ -14849,7 +14849,7 @@ var Profile = function Profile() {
               className: "col-2",
               children: "Submit"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
-              to: "/projects",
+              to: "/#/",
               className: "btn btn-danger col-2 mx-2",
               children: "Cancel"
             })]
