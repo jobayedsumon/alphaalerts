@@ -10354,21 +10354,16 @@ __webpack_require__.r(__webpack_exports__);
 var Login = function Login() {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useDispatch)();
 
-  var setUserToken = function setUserToken(user, token) {
-    dispatch({
-      type: 'set',
-      user: user,
-      token: token
-    });
-    _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_7__["default"].defaults.headers.common.Authorization = 'Bearer ' + token;
-    localStorage.setItem('token', token);
-  };
-
   var walletConnectHandler = function walletConnectHandler(e) {
     e.preventDefault();
     (0,_helpers_authHelper__WEBPACK_IMPORTED_MODULE_4__.walletConnect)().then(function (response) {
       if (response && response.user && response.token) {
-        setUserToken(response.user, response.token);
+        _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_7__["default"].defaults.headers.common.Authorization = 'Bearer ' + response.token;
+        dispatch({
+          type: 'set',
+          user: response.user,
+          token: response.token
+        });
       }
     })["catch"](function (error) {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_5__.swalError)("Error connecting wallet");
@@ -10381,7 +10376,12 @@ var Login = function Login() {
     var password = e.target.password.value;
     (0,_helpers_authHelper__WEBPACK_IMPORTED_MODULE_4__.login)(email, password).then(function (response) {
       if (response && response.user && response.token) {
-        setUserToken(response.user, response.token);
+        _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_7__["default"].defaults.headers.common.Authorization = 'Bearer ' + response.token;
+        dispatch({
+          type: 'set',
+          user: response.user,
+          token: response.token
+        });
       }
     })["catch"](function (error) {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_5__.swalError)("Error logging in");

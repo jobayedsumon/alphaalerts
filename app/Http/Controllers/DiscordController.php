@@ -75,6 +75,13 @@ class DiscordController extends Controller
     {
         $user = Auth::user();
         $discordUser = DiscordUser::where('user_id', $user->id)->first();
+        if (!isset($discordUser)) {
+            return response()->json([
+                'status' => 'error',
+                'servers' => [],
+
+            ]);
+        }
         $token = $discordUser->token;
 
         $user_servers = Discord::servers($token);
@@ -106,7 +113,7 @@ class DiscordController extends Controller
             foreach ($server_channels as $channel) {
                 if (in_array($channel->id, $project_channels)) {
                     $guild = Discord::guildPreview($channel->guild_id);
-                    $channel->server_name = $guild->name;
+                    $channel->server_name = @$guild->name ?? '';
                     $notification = ChannelNotification::where('user_id', Auth::user()->id)->where('channel_id', $channel->id)->first();
                     $channel->notification = (bool) $notification;
                     $channels[] = $channel;

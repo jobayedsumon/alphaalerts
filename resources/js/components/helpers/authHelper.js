@@ -1,6 +1,6 @@
 import fetchWrapper from "./fetchWrapper";
 import jwtDecode from "jwt-decode";
-import {swalError, swalSuccess} from "./common";
+import {swalError} from "./common";
 import {useDispatch, useSelector} from "react-redux";
 
 export const login = (email, password) => {
@@ -62,7 +62,6 @@ export const isAdmin = () => {
 }
 
 export const logout = () => {
-    localStorage.removeItem('token');
     delete fetchWrapper.defaults.headers.common['Authorization'];
     window.location.href = '/#/login';
 }

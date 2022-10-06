@@ -16,7 +16,7 @@ import {
 import CIcon from '@coreui/icons-react'
 import {cilLockLocked, cilUser} from '@coreui/icons'
 import axios from "axios";
-import {isLoggedIn, login, walletConnect} from "../../../helpers/authHelper";
+import {isLoggedIn, login, setUserToken, walletConnect} from "../../../helpers/authHelper";
 import {swalError} from "../../../helpers/common";
 import {useDispatch} from "react-redux";
 import fetchWrapper from "../../../helpers/fetchWrapper";
@@ -25,17 +25,12 @@ const Login = () => {
 
     const dispatch = useDispatch();
 
-    const setUserToken = (user, token) => {
-        dispatch({type: 'set', user: user, token: token});
-        fetchWrapper.defaults.headers.common['Authorization'] = 'Bearer ' + token;
-        localStorage.setItem('token', token);
-    }
-
     const walletConnectHandler = (e) => {
         e.preventDefault();
         walletConnect().then(response => {
             if (response && response.user && response.token) {
-                setUserToken(response.user, response.token);
+                fetchWrapper.defaults.headers.common['Authorization'] = 'Bearer ' + response.token;
+                dispatch({type: 'set', user: response.user, token: response.token});
             }
         }).catch(error => {
             swalError("Error connecting wallet");
@@ -48,7 +43,8 @@ const Login = () => {
         const password = e.target.password.value;
         login(email, password).then(response => {
                 if (response && response.user && response.token) {
-                    setUserToken(response.user, response.token);
+                    fetchWrapper.defaults.headers.common['Authorization'] = 'Bearer ' + response.token;
+                    dispatch({type: 'set', user: response.user, token: response.token});
                 }
             }
         ).catch(error => {

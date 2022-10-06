@@ -11,15 +11,23 @@ class Discord
     {
         try {
 
-            $guzzle = new Client();
+            $discordUser = Auth::user()->discordUser;
 
-            $response = $guzzle->request('GET', 'https://discord.com/api/v10/users/@me/guilds', [
-                'headers' => [
-                    'Authorization' => 'Bearer ' . $discord_token,
-                ],
-            ]);
+            if ($discordUser) {
 
-            $servers = json_decode($response->getBody()->getContents());
+                $guzzle = new Client();
+
+                $response = $guzzle->request('GET', 'https://discord.com/api/v10/users/@me/guilds', [
+                    'headers' => [
+                        'Authorization' => 'Bearer ' . $discord_token,
+                    ],
+                ]);
+
+                $servers = json_decode($response->getBody()->getContents());
+
+            } else {
+               $servers = [];
+            }
 
         } catch (\Exception $e) {
             $servers = [];
@@ -32,16 +40,23 @@ class Discord
     {
         try {
 
-            $guzzle = new Client();
+            $discordUser = Auth::user()->discordUser;
 
-            $response = $guzzle->request('GET', 'https://discord.com/api/v10/guilds/' . $guild_id . '/channels', [
-                'headers' => [
-                    'Authorization' => 'Bot ' . env('BOT_TOKEN'),
-                ],
-            ]);
+            if ($discordUser) {
+                $guzzle = new Client();
+
+                $response = $guzzle->request('GET', 'https://discord.com/api/v10/guilds/' . $guild_id . '/channels', [
+                    'headers' => [
+                        'Authorization' => 'Bot ' . env('BOT_TOKEN'),
+                    ],
+                ]);
 
 
-            $channels = json_decode($response->getBody()->getContents());
+                $channels = json_decode($response->getBody()->getContents());
+
+            } else {
+                $channels = [];
+            }
 
         } catch (\Exception $ex) {
             $channels = [];
@@ -54,16 +69,21 @@ class Discord
     {
         try {
 
-            $guzzle = new Client();
+            $discordUser = Auth::user()->discordUser;
 
-            $response = $guzzle->request('GET', 'https://discord.com/api/v10/channels/' . $channel_id . '/messages', [
-                'headers' => [
-                    'Authorization' => 'Bot ' . env('BOT_TOKEN'),
-                ],
-            ]);
+            if ($discordUser) {
+                $guzzle = new Client();
 
-            $messages = json_decode($response->getBody()->getContents());
+                $response = $guzzle->request('GET', 'https://discord.com/api/v10/channels/' . $channel_id . '/messages', [
+                    'headers' => [
+                        'Authorization' => 'Bot ' . env('BOT_TOKEN'),
+                    ],
+                ]);
 
+                $messages = json_decode($response->getBody()->getContents());
+            } else {
+                $messages = [];
+            }
 
         } catch (\Exception $ex) {
             $messages = [];

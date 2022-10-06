@@ -1,14 +1,32 @@
 import {CButton, CCard, CCardBody, CCardHeader, CCol, CFormInput, CFormLabel, CRow} from "@coreui/react";
-import {connectDiscord, disconnectDiscord} from "../../helpers/discordHelper";
 import React, {useEffect, useState} from "react";
 import fetchWrapper from "../../helpers/fetchWrapper";
+import {useDispatch, useSelector} from "react-redux";
 
 const DiscordInfo = () => {
+    const token = useSelector(state => state.token);
+    const dispatch = useDispatch();
     const [discordUser, setDiscordUser] = useState({
         id: '',
         name: '',
         nickname: '',
     });
+
+    const disconnectDiscord = () => {
+        fetchWrapper.get('/api/discord-disconnect')
+            .then(response => {
+                const data = response.data;
+                if (data.status === 'success') {
+                    setDiscordUser({
+                        id: '',
+                        name: '',
+                        nickname: '',
+                    });
+                    window.location.reload()
+                }
+            }).catch(error => {
+        });
+    }
 
     useEffect(() => {
             fetchWrapper.get('/api/discord-info')
@@ -26,7 +44,9 @@ const DiscordInfo = () => {
     return  <CCard className="mb-5">
         <CCardHeader className="fs-5 d-flex justify-content-between">
             <span>Discord Info</span>
-            {discordUser && discordUser.id ? <CButton className="btn-danger" onClick={disconnectDiscord}>Disconnect Discord</CButton> : <CButton onClick={connectDiscord}>Connect Discord</CButton>}
+            {discordUser && discordUser.id ?
+                <CButton className="btn-danger" onClick={disconnectDiscord}>Disconnect Discord</CButton>
+                : <a className="btn btn-primary" href={`/api/discord-connect?token=${token}`}>Connect Discord</a>}
 
         </CCardHeader>
         <CCardBody>

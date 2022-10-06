@@ -3,22 +3,26 @@ import {Link} from "react-router-dom";
 import CustomTable from "../../common-components/CustomTable";
 import DiscordInfo from "./DiscordInfo";
 import fetchWrapper from "../../helpers/fetchWrapper";
+import {useSelector} from "react-redux";
 
 const Discord = () => {
 
     const [servers, setServers] = useState([]);
 
     useEffect(() => {
-        fetchWrapper.get('/api/discord-servers')
-            .then(response => {
-                const data = response.data;
-                if (data.status === 'success') {
-                    setServers(data.servers);
-                }
-            }
-        ).catch(error => {
-            setServers([]);
-        });
+
+            fetchWrapper.get('/api/discord-servers')
+                .then(response => {
+                        const data = response.data;
+                        if (data.status === 'success') {
+                            setServers(data.servers);
+                        }
+                    }
+                ).catch(error => {
+                setServers([]);
+            });
+
+
     }, []);
 
     const columns = [

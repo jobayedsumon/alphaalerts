@@ -5,12 +5,14 @@ import DiscordInfo from "./DiscordInfo";
 import fetchWrapper from "../../helpers/fetchWrapper";
 import {CFormSwitch} from "@coreui/react";
 import {swalError} from "../../helpers/common";
+import {useSelector} from "react-redux";
 
 const DiscordServer = () => {
 
     const params = useParams();
     const id = params.id;
     const [channels, setChannels] = useState([]);
+    const discordUser = useSelector(state => state.discordUser);
 
     const notificationToggle = (notification, channel) => {
         fetchWrapper.post('/api/notification', {
@@ -34,17 +36,20 @@ const DiscordServer = () => {
     }
 
     useEffect(() => {
-        fetchWrapper.get('/api/discord-channels/'+id)
-            .then(response => {
-                const data = response.data;
-                if (data.status === 'success') {
-                    setChannels(data.channels);
-                }
-            }
-        ).catch(error => {
-            setChannels([]);
-        });
-    }, []);
+
+            fetchWrapper.get('/api/discord-channels/'+id)
+                .then(response => {
+                        const data = response.data;
+                        if (data.status === 'success') {
+                            setChannels(data.channels);
+                        }
+                    }
+                ).catch(error => {
+                setChannels([]);
+            });
+
+
+    }, [discordUser]);
 
     const columns = [
         {

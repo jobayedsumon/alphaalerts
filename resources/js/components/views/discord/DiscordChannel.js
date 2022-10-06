@@ -7,6 +7,7 @@ import CIcon from "@coreui/icons-react";
 import {cilMenu, cilUser} from "@coreui/icons";
 import {CCard, CCardBody, CCardHeader} from "@coreui/react";
 import moment from "moment";
+import {useSelector} from "react-redux";
 
 const DiscordChannel = () => {
 
@@ -15,16 +16,18 @@ const DiscordChannel = () => {
     const [messages, setMessages] = useState([]);
 
     useEffect(() => {
-        fetchWrapper.get('/api/discord-messages/'+id)
-            .then(response => {
-                const data = response.data;
-                if (data.status === 'success') {
-                    setMessages(data.messages);
-                }
-            }
-        ).catch(error => {
-            setMessages([]);
-        });
+
+            fetchWrapper.get('/api/discord-messages/'+id)
+                .then(response => {
+                        const data = response.data;
+                        if (data.status === 'success') {
+                            setMessages(data.messages);
+                        }
+                    }
+                ).catch(error => {
+                setMessages([]);
+            });
+
     }, []);
 
     return <>

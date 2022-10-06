@@ -2,6 +2,8 @@ import React, {Component, Suspense, useEffect} from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
 import './scss/style.scss'
 import fetchWrapper from "./helpers/fetchWrapper";
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "./helpers/authHelper";
 
 const loading = (
   <div className="pt-3 text-center">
@@ -20,6 +22,30 @@ const Page500 = React.lazy(() => import('./views/pages/page500/Page500'))
 
 
 const App = () => {
+    const dispatch = useDispatch();
+    const token = useSelector(state => state.token);
+
+    const checkToken = () => {
+        if (token) {
+            fetchWrapper.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+        } else {
+            dispatch({type: 'set', user: null, token: null});
+            logout();
+        }
+    }
+
+    useEffect(() => {
+        checkToken();
+        fetchWrapper.interceptors.response.use(
+            response => response,
+            error => {
+                if (error.response.status === 401) {
+                    checkToken();
+                }
+                return Promise.reject(error);
+            }
+        );
+    }, [token]);
 
     return (
       <HashRouter>

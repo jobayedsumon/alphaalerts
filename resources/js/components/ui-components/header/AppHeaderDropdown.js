@@ -27,10 +27,10 @@ import {logout} from "../../helpers/authHelper";
 import {useDispatch, useSelector} from "react-redux";
 
 const AppHeaderDropdown = () => {
-    const dispatch = useDispatch();
     const user = useSelector(state => state.user);
+    const dispatch = useDispatch();
     const logoutHandler = () => {
-        dispatch({type: 'set', user: null, token: null});
+        dispatch({type: 'set', user: null, token: null})
         logout();
     }
   return (
