@@ -33,7 +33,7 @@ const CustomTable = (props) => {
                 />
 
                 <div>
-                    {props.createLink && <Link to={props.createLink} className="btn btn-primary ">Create</Link>}
+                    {props.createLink && <Link to={props.createLink} className="btn btn-primary">Create</Link>}
                 </div>
 
 

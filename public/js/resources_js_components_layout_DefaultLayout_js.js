@@ -12543,7 +12543,7 @@ var CustomTable = function CustomTable(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         children: props.createLink && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: props.createLink,
-          className: "btn btn-primary ",
+          className: "btn btn-primary",
           children: "Create"
         })
       })]
