@@ -47,7 +47,7 @@ class CheckChannelMessage extends Command
                 $channel = Discord::channel($channel_notification->channel_id);
 
                 if ($channel && isset($channel->last_message_id) && $channel->last_message_id != $channel_notification->last_message_id) {
-                    if ($channel_notification->user->country_code && $channel_notification->user->phone_number) {
+                    if ($channel_notification->user->country_code && $channel_notification->user->phone_number && $channel_notification->user->phone_verified_at) {
 
                         $mobile_no = $channel_notification->user->country_code . $channel_notification->user->phone_number;
                         $message = 'A new message has arrived in '.$channel->name.' on '.$channel_notification->server_name.': https://discord.com/channels/'. $channel->guild_id . '/' . $channel->id .' - NFTY Dash';

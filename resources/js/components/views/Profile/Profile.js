@@ -58,8 +58,8 @@ const Profile = () => {
             const data = response.data;
             if (data.status === 'success') {
                 swalSuccess("Profile updated successfully");
+                setUser(data.user);
                 dispatch({type: 'set', user: data.user});
-                localStorage.setItem('user', JSON.stringify(data.user));
                 navigate('/profile');
             } else {
                 swalError("Error updating profile");
@@ -93,6 +93,7 @@ const Profile = () => {
             const data = response.data;
             if (data.status === 'success') {
                 swalSuccess("Phone number verified successfully");
+                setUser(data.user);
                 dispatch({type: 'set', user: data.user});
                 setVisible(false);
                 navigate('/profile');
@@ -140,9 +141,9 @@ const Profile = () => {
                             </CCol>
                             <CCol md="2" className="px-0">
                                 {user.email && user.email_verified_at ?
-                                    <i title="Verified" className="fa fa-check-circle text-success mt-1"></i> :
+                                    <i title="Verified" className="fa fa-check-circle text-success mt-2"></i> :
                                     <>
-                                        <i title="Not verified" className="fa fa-exclamation-circle mt-1 text-warning"></i>
+                                        <i title="Not verified" className="fa fa-exclamation-circle mt-2 text-warning"></i>
                                         <CButton className="mx-5" onClick={emailVerification}>Verify</CButton>
                                     </>
 
@@ -168,14 +169,13 @@ const Profile = () => {
                                 <CInputGroup>
                                     <CFormLabel className="col-3">Phone Number*</CFormLabel>
                                     <CFormInput name="phone_number" className="col-4" type="text" defaultValue={user.phone_number} required={true} />
-
                                 </CInputGroup>
                             </CCol>
                             <CCol md="2" className="px-0">
                                 {user.phone_number && user.phone_verified_at ?
-                                    <i title="Verified" className="fa fa-check-circle text-success mt-1"></i> :
+                                    <i title="Verified" className="fa fa-check-circle text-success mt-2"></i> :
                                     <>
-                                        <i title="Not verified" className="fa fa-exclamation-circle mt-1 text-warning"></i>
+                                        <i title="Not verified" className="fa fa-exclamation-circle mt-2 text-warning"></i>
                                         <CButton className="mx-5" onClick={verificationCode}>Verify</CButton>
                                     </>
 

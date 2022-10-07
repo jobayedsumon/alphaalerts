@@ -136,6 +136,15 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
+
+        if ($user->email != $request->get('email')) {
+            $user->email_verified_at = null;
+        }
+
+        if ($user->country_code != $request->get('country_code') || $user->phone_number != $request->get('phone_number')) {
+            $user->phone_verified_at = null;
+        }
+
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->country_code = $request->get('country_code');

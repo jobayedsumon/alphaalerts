@@ -14791,11 +14791,11 @@ var Profile = function Profile() {
 
       if (data.status === 'success') {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)("Profile updated successfully");
+        setUser(data.user);
         dispatch({
           type: 'set',
           user: data.user
         });
-        localStorage.setItem('user', JSON.stringify(data.user));
         navigate('/profile');
       } else {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error updating profile");
@@ -14829,6 +14829,7 @@ var Profile = function Profile() {
 
       if (data.status === 'success') {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)("Phone number verified successfully");
+        setUser(data.user);
         dispatch({
           type: 'set',
           user: data.user
@@ -14903,11 +14904,11 @@ var Profile = function Profile() {
               className: "px-0",
               children: user.email && user.email_verified_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                 title: "Verified",
-                className: "fa fa-check-circle text-success mt-1"
+                className: "fa fa-check-circle text-success mt-2"
               }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                   title: "Not verified",
-                  className: "fa fa-exclamation-circle mt-1 text-warning"
+                  className: "fa fa-exclamation-circle mt-2 text-warning"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
                   className: "mx-5",
                   onClick: emailVerification,
@@ -14960,11 +14961,11 @@ var Profile = function Profile() {
               className: "px-0",
               children: user.phone_number && user.phone_verified_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                 title: "Verified",
-                className: "fa fa-check-circle text-success mt-1"
+                className: "fa fa-check-circle text-success mt-2"
               }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                   title: "Not verified",
-                  className: "fa fa-exclamation-circle mt-1 text-warning"
+                  className: "fa fa-exclamation-circle mt-2 text-warning"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
                   className: "mx-5",
                   onClick: verificationCode,
