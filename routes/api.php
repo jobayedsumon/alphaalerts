@@ -21,7 +21,13 @@ use Illuminate\Support\Facades\Route;
 Route::post('login', [AuthController::class, 'login']);
 Route::post('wallet-connect', [AuthController::class, 'walletConnect']);
 Route::post('user', [AuthController::class, 'user']);
+Route::get('user', [AuthController::class, 'userInfo']);
 Route::put('profile', [AuthController::class, 'profile']);
+
+Route::post('verification-code', [AuthController::class, 'verificationCode']);
+Route::post('verify-phone-number', [AuthController::class, 'verifyPhoneNumber']);
+Route::post('email-verification', [AuthController::class, 'sendVerificationEmail']);
+Route::get('verify-email/{id}/{hash}', [AuthController::class, 'verifyEmail']);
 
 Route::post('notification', [ProjectController::class, 'notification']);
 Route::resource('projects', ProjectController::class);
@@ -34,6 +40,4 @@ Route::get('guild-preview/{id}', [DiscordController::class, 'guildPreview']);
 Route::get('discord-channels/{id}', [DiscordController::class, 'discordChannels']);
 Route::get('discord-messages/{id}', [DiscordController::class, 'discordMessages']);
 Route::get('discord-disconnect', [DiscordController::class, 'discordDisconnect']);
-
-Route::get('user', [AuthController::class, 'user']);
 
