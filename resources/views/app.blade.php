@@ -12,6 +12,8 @@
 
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
+        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
         <!-- Include Frontend Application (webpack mix) -->
         <script defer src="{{asset('js/manifest.js')}}"></script>
         <script defer src="{{asset('js/vendor.js')}}"></script>

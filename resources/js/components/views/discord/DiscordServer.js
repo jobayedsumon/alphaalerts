@@ -81,8 +81,11 @@ const DiscordServer = () => {
 
         <DiscordInfo/>
 
-        <CustomTable title="Discord Server Announcements" columns={columns} data={channels}/>
-    </>
+        <CustomTable title={<div className="d-flex justify-content-between">
+            <span>Discord Server Announcements</span>
+            <Link to="/discord" className="btn btn-primary btn-sm mx-2">Servers</Link>
+        </div>} columns={columns} data={channels}/>
+    </>;
 }
 
 export default DiscordServer;

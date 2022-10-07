@@ -12543,7 +12543,7 @@ var CustomTable = function CustomTable(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         children: props.createLink && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
           to: props.createLink,
-          className: "btn btn-primary btn-sm",
+          className: "btn btn-primary ",
           children: "Create"
         })
       })]
@@ -13954,13 +13954,13 @@ var AppBreadcrumb = function AppBreadcrumb() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CBreadcrumb, {
     className: "m-0 ms-2",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CBreadcrumbItem, {
-      href: "/",
+      href: "/#/",
       children: "Home"
     }), breadcrumbs.map(function (breadcrumb, index) {
       return /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CBreadcrumbItem, _objectSpread(_objectSpread({}, breadcrumb.active ? {
         active: true
       } : {
-        href: breadcrumb.pathname
+        href: '/#' + breadcrumb.pathname
       }), {}, {
         key: index
       }), breadcrumb.name);
@@ -15144,12 +15144,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var _common_components_CustomTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../common-components/CustomTable */ "./resources/js/components/common-components/CustomTable.js");
 /* harmony import */ var _DiscordInfo__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DiscordInfo */ "./resources/js/components/views/discord/DiscordInfo.js");
 /* harmony import */ var _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../helpers/fetchWrapper */ "./resources/js/components/helpers/fetchWrapper.js");
 /* harmony import */ var _coreui_icons_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @coreui/icons-react */ "./node_modules/@coreui/icons-react/dist/index.es.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-user.js");
+/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-user.js");
 /* harmony import */ var _coreui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @coreui/react */ "./node_modules/@coreui/react/dist/index.es.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
 /* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_6__);
@@ -15203,11 +15203,16 @@ var DiscordChannel = function DiscordChannel() {
   }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_DiscordInfo__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_5__.CCard, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_5__.CCardHeader, {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_5__.CCardHeader, {
+        className: "d-flex justify-content-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("span", {
           className: "fs-5",
           children: "Discord Server Announcements"
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
+          to: "/discord",
+          className: "btn btn-primary btn-sm mx-2",
+          children: "Servers"
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_5__.CCardBody, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
           className: "scroll scroll-pull",
@@ -15230,12 +15235,12 @@ var DiscordChannel = function DiscordChannel() {
                       width: 40,
                       src: "https://cdn.discordapp.com/avatars/".concat(message.author.id, "/").concat(message.author.avatar, ".png")
                     }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_4__["default"], {
-                      icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_10__.cilUser,
+                      icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_11__.cilUser,
                       size: "xl"
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                     className: "mx-2",
-                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
                       className: "text-decoration-none text-black",
                       children: message.author.username
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
@@ -15543,7 +15548,16 @@ var DiscordServer = function DiscordServer() {
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_DiscordInfo__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_common_components_CustomTable__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: "Discord Server Announcements",
+      title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "d-flex justify-content-between",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+          children: "Discord Server Announcements"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+          to: "/discord",
+          className: "btn btn-primary btn-sm mx-2",
+          children: "Servers"
+        })]
+      }),
       columns: columns,
       data: channels
     })]

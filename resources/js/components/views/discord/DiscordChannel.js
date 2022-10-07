@@ -35,8 +35,9 @@ const DiscordChannel = () => {
         <DiscordInfo/>
 
         <CCard>
-            <CCardHeader>
+            <CCardHeader className="d-flex justify-content-between">
                 <span className="fs-5">Discord Server Announcements</span>
+                <Link to="/discord" className="btn btn-primary btn-sm mx-2">Servers</Link>
             </CCardHeader>
             <CCardBody>
                 <div className="scroll scroll-pull" data-mobile-height="350" style={{
