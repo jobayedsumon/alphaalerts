@@ -129,4 +129,23 @@ class Discord
 
         return $channel;
     }
+
+    public static function message($channel_id, $message_id)
+    {
+        try {
+            $guzzle = new Client();
+            $response = $guzzle->request('GET', 'https://discord.com/api/v10/channels/' . $channel_id . '/messages/' . $message_id, [
+                'headers' => [
+                    'Authorization' => 'Bot ' . env('BOT_TOKEN'),
+                ],
+            ]);
+
+            $message = json_decode($response->getBody()->getContents());
+
+        } catch (\Exception $ex) {
+            $message = null;
+        }
+
+        return $message;
+    }
 }

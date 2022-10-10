@@ -16,7 +16,7 @@ const DiscordServer = () => {
 
     const notificationToggle = (notification, channel) => {
         fetchWrapper.post('/api/notification', {
-            server_name: channel.server_name,
+            server_id: channel.guild_id,
             channel_id: channel.id,
             last_message_id: channel.last_message_id,
             notification: notification

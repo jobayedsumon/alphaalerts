@@ -15474,7 +15474,7 @@ var DiscordServer = function DiscordServer() {
 
   var notificationToggle = function notificationToggle(notification, channel) {
     _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_3__["default"].post('/api/notification', {
-      server_name: channel.server_name,
+      server_id: channel.guild_id,
       channel_id: channel.id,
       last_message_id: channel.last_message_id,
       notification: notification

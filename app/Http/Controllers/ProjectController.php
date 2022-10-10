@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Discord;
 use App\Models\ChannelNotification;
 use App\Models\Project;
 use Illuminate\Http\Request;
@@ -117,9 +118,10 @@ class ProjectController extends Controller
         if ($request->get ('notification')) {
             $channel_notification = new ChannelNotification();
             $channel_notification->user_id = Auth::user ()->id;
-            $channel_notification->server_name = $request->get ('server_name');
             $channel_notification->channel_id = $request->get ('channel_id');
             $channel_notification->last_message_id = $request->get ('last_message_id');
+            $guild = Discord::guildPreview($request->get ('server_id'));
+            $channel_notification->server_name = @$guild->name ?? '';
             $channel_notification->save ();
             return response ()->json ([
                 'status' => 'success',
