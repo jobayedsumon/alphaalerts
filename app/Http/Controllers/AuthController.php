@@ -158,10 +158,14 @@ class AuthController extends Controller
         ]);
     }
 
-    public function verificationCode()
+    public function verificationCode(Request $request)
     {
         try{
             $user = Auth::user();
+            $user->country_code = $request->get('country_code');
+            $user->phone_number = $request->get('phone_number');
+            $user->save();
+
             $phone_number = $user->country_code . $user->phone_number;
 
             $sid = env('TWILIO_SID');
@@ -239,10 +243,24 @@ class AuthController extends Controller
         }
     }
 
-    public function sendVerificationEmail()
+    public function sendVerificationEmail(Request $request)
     {
         try {
             $user = Auth::user();
+            $validator = Validator::make($request->all(), [
+                'email' => 'required|string|email|max:255|unique:users,id,'.$user->id,
+            ]);
+
+            if ($validator->fails()) {
+                return response()->json([
+                    'status' => 'error',
+                    'message' => $validator->errors(),
+                ]);
+            }
+
+            $user->email = $request->get('email');
+            $user->email_verified_at = null;
+            $user->save();
 
             $id = $user->id;
             $hash = sha1($user->email);

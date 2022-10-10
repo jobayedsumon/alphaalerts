@@ -14720,6 +14720,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _helpers_countries__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helpers/countries */ "./resources/js/components/helpers/countries.js");
 /* harmony import */ var _coreui_icons_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @coreui/icons-react */ "./node_modules/@coreui/icons-react/dist/index.es.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -14756,21 +14762,43 @@ var Profile = function Profile() {
       user = _useState2[0],
       setUser = _useState2[1];
 
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    email: user.email,
+    phone_number: user.phone_number,
+    country_code: user.country_code
+  }),
       _useState4 = _slicedToArray(_useState3, 2),
-      visible = _useState4[0],
-      setVisible = _useState4[1];
+      verifyData = _useState4[0],
+      setVerifyData = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      visible = _useState6[0],
+      setVisible = _useState6[1];
+
+  var eventChange = function eventChange(e) {
+    setVerifyData(_objectSpread(_objectSpread({}, verifyData), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+
+  var updateUserData = function updateUserData(data) {
+    setUser(data.user);
+    setVerifyData({
+      email: data.user.email,
+      phone_number: data.user.phone_number,
+      country_code: data.user.country_code
+    });
+    dispatch({
+      type: 'set',
+      user: data.user
+    });
+  };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].get('/api/user').then(function (response) {
       var data = response.data;
 
       if (data.status === 'success') {
-        setUser(data.user);
-        dispatch({
-          type: 'set',
-          user: data.user
-        });
+        updateUserData(data);
       }
     })["catch"](function (error) {});
   }, []);
@@ -14790,12 +14818,8 @@ var Profile = function Profile() {
       var data = response.data;
 
       if (data.status === 'success') {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)("Profile updated successfully");
-        setUser(data.user);
-        dispatch({
-          type: 'set',
-          user: data.user
-        });
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)('Profile updated successfully');
+        updateUserData(data);
         navigate('/profile');
       } else {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error updating profile");
@@ -14806,17 +14830,24 @@ var Profile = function Profile() {
   };
 
   var verificationCode = function verificationCode() {
-    _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].post('/api/verification-code').then(function (response) {
-      var data = response.data;
+    if (verifyData.country_code && verifyData.phone_number) {
+      _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].post('/api/verification-code', {
+        country_code: verifyData.country_code,
+        phone_number: verifyData.phone_number
+      }).then(function (response) {
+        var data = response.data;
 
-      if (data.status === 'success') {
-        setVisible(true);
-      } else {
+        if (data.status === 'success') {
+          setVisible(true);
+        } else {
+          (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending verification code");
+        }
+      })["catch"](function (error) {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending verification code");
-      }
-    })["catch"](function (error) {
-      (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending verification code");
-    });
+      });
+    } else {
+      (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Please enter your phone number and country code");
+    }
   };
 
   var verifyPhoneNumber = function verifyPhoneNumber(e) {
@@ -14829,11 +14860,7 @@ var Profile = function Profile() {
 
       if (data.status === 'success') {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)("Phone number verified successfully");
-        setUser(data.user);
-        dispatch({
-          type: 'set',
-          user: data.user
-        });
+        updateUserData(data);
         setVisible(false);
         navigate('/profile');
       } else {
@@ -14845,17 +14872,23 @@ var Profile = function Profile() {
   };
 
   var emailVerification = function emailVerification() {
-    _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].post('/api/email-verification').then(function (response) {
-      var data = response.data;
+    if (verifyData.email) {
+      _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].post('/api/email-verification', {
+        email: verifyData.email
+      }).then(function (response) {
+        var data = response.data;
 
-      if (data.status === 'success') {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)(data.message);
-      } else {
+        if (data.status === 'success') {
+          (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)(data.message);
+        } else {
+          (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending email verification link");
+        }
+      })["catch"](function (error) {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending email verification link");
-      }
-    })["catch"](function (error) {
-      (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending email verification link");
-    });
+      });
+    } else {
+      (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Please add your email address");
+    }
   };
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
@@ -14896,7 +14929,8 @@ var Profile = function Profile() {
                   className: "col-4",
                   type: "email",
                   defaultValue: user.email,
-                  required: true
+                  required: true,
+                  onChange: eventChange
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CCol, {
@@ -14929,6 +14963,7 @@ var Profile = function Profile() {
                   "aria-label": "Country Code",
                   defaultValue: user.country_code,
                   required: true,
+                  onChange: eventChange,
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("option", {
                     children: "Select Country"
                   }), _helpers_countries__WEBPACK_IMPORTED_MODULE_5__["default"] && _helpers_countries__WEBPACK_IMPORTED_MODULE_5__["default"].map(function (country, index) {
@@ -14953,7 +14988,8 @@ var Profile = function Profile() {
                   className: "col-4",
                   type: "text",
                   defaultValue: user.phone_number,
-                  required: true
+                  required: true,
+                  onChange: eventChange
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CCol, {
@@ -15003,7 +15039,7 @@ var Profile = function Profile() {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CModalBody, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("p", {
-            children: "We have sent a verification code to ".concat(user.country_code + user.phone_number, ". Please check your whatsapp and enter the code below: ")
+            children: "We have sent a verification code to ".concat(verifyData.country_code + verifyData.phone_number, ". Please check your whatsapp and enter the code below: ")
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormLabel, {
             children: "Verification Code*"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormInput, {
