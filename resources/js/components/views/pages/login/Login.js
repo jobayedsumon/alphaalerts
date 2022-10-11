@@ -8,7 +8,7 @@ import {
     CCol,
     CContainer,
     CForm,
-    CFormInput,
+    CFormInput, CImage,
     CInputGroup,
     CInputGroupText,
     CRow,
@@ -58,8 +58,11 @@ const Login = () => {
         isLoggedIn() ? <Navigate to="/" replace/> :
             <div className=" min-vh-100 d-flex flex-row align-items-center loginPage">
                 <CContainer>
+
                     <CRow className="justify-content-center align-items-center">
-                        <CCol md={6}>
+
+                        <CCol md={6} className="text-center">
+                            <CImage src={logo} />
                             <CForm onSubmit={handleSubmit}>
                                 <h1 className="text-white text-center">Sign In to your account</h1>
                                 <CInputGroup className="mb-3">
@@ -81,7 +84,7 @@ const Login = () => {
                                 </CRow>
                             </CForm>
                         </CCol>
-                        <CCol md={2}>
+                        <CCol md={2} className="walletButton">
                             <div className="d-flex align-items-center">
                                 <h6 className="text-white">OR</h6>
                                 <CButton className="mx-3" onClick={walletConnectHandler}>CONNECT WALLET</CButton>

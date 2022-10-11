@@ -4,7 +4,7 @@
   src: url('../fonts/DINEngschrift-Regular.ttf') format('truetype');
 }
 
-* {
+*:not(i) {
     font-family: 'DINEngschrift', sans-serif !important;
 }
 
@@ -27,5 +27,9 @@ a {
     border-color: #455257 !important;
     color: #582c75 !important;
     height: 50px;
+}
+
+.walletButton {
+    margin-top: 10rem !important;
 }
 
