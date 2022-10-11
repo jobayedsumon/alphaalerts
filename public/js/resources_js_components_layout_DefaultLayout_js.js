@@ -14752,6 +14752,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Profile = function Profile() {
+  var _user$notification_me, _user$notification_me2;
+
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_8__.useNavigate)();
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_4__.useDispatch)();
 
@@ -14809,11 +14811,15 @@ var Profile = function Profile() {
     var email = e.target.email.value;
     var country_code = e.target.country_code.value;
     var phone_number = e.target.phone_number.value;
+    var whatsapp_notify = e.target.whatsapp_notify.checked;
+    var email_notify = e.target.email_notify.checked;
     _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].put('/api/profile', {
       name: name,
       email: email,
       country_code: country_code,
-      phone_number: phone_number
+      phone_number: phone_number,
+      whatsapp_notify: whatsapp_notify,
+      email_notify: email_notify
     }).then(function (response) {
       var data = response.data;
 
@@ -15009,6 +15015,29 @@ var Profile = function Profile() {
                 })]
               })
             })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CRow, {
+            className: "mb-3",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CCol, {
+              md: "8",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CInputGroup, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormLabel, {
+                  className: "col-3",
+                  children: "Notification Methods"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormCheck, {
+                  name: "whatsapp_notify",
+                  defaultChecked: (_user$notification_me = user.notification_method) === null || _user$notification_me === void 0 ? void 0 : _user$notification_me.whatsapp
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormLabel, {
+                  className: "col-2",
+                  children: "\xA0Whatsapp"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormCheck, {
+                  name: "email_notify",
+                  defaultChecked: (_user$notification_me2 = user.notification_method) === null || _user$notification_me2 === void 0 ? void 0 : _user$notification_me2.email
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormLabel, {
+                  className: "col-2",
+                  children: "\xA0Email"
+                })]
+              })
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CRow, {
             className: "mt-4 mx-2",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
@@ -15690,7 +15719,7 @@ var ProjectCreate = function ProjectCreate() {
               md: "8",
               children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CInputGroup, {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormLabel, {
-                  className: "col-3",
+                  className: "col-3 ",
                   children: "White Label Package"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormCheck, {
                   name: "white_label_package"

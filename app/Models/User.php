@@ -61,4 +61,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasOne(DiscordUser::class);
     }
+
+    public function notificationMethod()
+    {
+        return $this->hasOne(NotificationMethod::class);
+    }
 }

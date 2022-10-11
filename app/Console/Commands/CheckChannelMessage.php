@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Discord;
 use App\Helper;
 use App\Models\ChannelNotification;
+use App\Notifications\ChannelMessage;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 
@@ -48,9 +49,10 @@ class CheckChannelMessage extends Command
 
                 if ($channel && isset($channel->last_message_id) && $channel->last_message_id != $channel_notification->last_message_id) {
 
-                    if ($channel_notification->user->country_code && $channel_notification->user->phone_number && $channel_notification->user->phone_verified_at) {
+                    $user = $channel_notification->user;
+                    $notificationMethod = $user->notificationMethod;
 
-                        $mobile_no = $channel_notification->user->country_code . $channel_notification->user->phone_number;
+                    if ($notificationMethod && ($notificationMethod->whatsapp || $notificationMethod->email)) {
 
                         $lastMessage = Discord::message($channel->id, $channel->last_message_id);
                         $channelLink = Helper::shortUrl('https://discord.com/channels/'.$channel->guild_id.'/'.$channel->id);
@@ -59,11 +61,25 @@ class CheckChannelMessage extends Command
 
                         $message = @$lastMessage->content.' | '.$channel->name.' | '.$channel_notification->server_name.' | '.$channelLink.' - '.$brandText;
 
-                        Helper::sendWhatsapp($mobile_no, $message);
+                        if ($notificationMethod->whatsapp && $user->country_code && $user->phone_number && $user->phone_verified_at) {
+                            $mobile_no = $user->country_code . $user->phone_number;
+                            Helper::sendWhatsapp($mobile_no, $message);
+                        }
 
-                        $channel_notification->last_message_id = $channel->last_message_id;
-                        $channel_notification->save();
+                        if ($notificationMethod->email && $user->email && $user->email_verified_at) {
+
+                            $data['message'] = $lastMessage->content;
+                            $data['channel_name'] = $channel->name;
+                            $data['server_name'] = $channel_notification->server_name;
+                            $data['channel_link'] = $channelLink;
+                            $data['brand_text'] = $brandText;
+
+                            $user->notify(new ChannelMessage($data));
+                        }
                     }
+
+                    $channel_notification->last_message_id = $channel->last_message_id;
+                    $channel_notification->save();
                 }
 
             } catch (\Exception $ex) {

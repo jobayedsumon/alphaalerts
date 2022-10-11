@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\NotificationMethod;
 use App\Notifications\EmailVerification;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -121,9 +122,11 @@ class AuthController extends Controller
 
     public function profile(Request $request)
     {
+        $user = Auth::user();
+
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,id,'.Auth::user()->id,
+            'email' => 'required|string|email|max:255|unique:users,id,'.$user->id,
             'country_code' => 'required|string|max:255',
             'phone_number' => 'required|string|max:255',
         ]);
@@ -134,8 +137,6 @@ class AuthController extends Controller
                 'message' => $validator->errors(),
             ]);
         }
-
-        $user = Auth::user();
 
         if ($user->email != $request->get('email')) {
             $user->email_verified_at = null;
@@ -150,6 +151,16 @@ class AuthController extends Controller
         $user->country_code = $request->get('country_code');
         $user->phone_number = $request->get('phone_number');
         $user->save();
+
+        $notificationMethod = NotificationMethod::where('user_id', $user->id)->first();
+        if (!$notificationMethod) {
+            $notificationMethod = new NotificationMethod();
+            $notificationMethod->user_id = $user->id;
+        }
+        $notificationMethod->whatsapp = $request->get('whatsapp_notify');
+        $notificationMethod->email = $request->get('email_notify');
+
+        $notificationMethod->save();
 
         return response()->json([
             'status' => 'success',
@@ -306,6 +317,7 @@ class AuthController extends Controller
     public function userInfo()
     {
         $user = Auth::user();
+        $user->load('notificationMethod');
         return response()->json([
             'status' => 'success',
             'user' => $user,

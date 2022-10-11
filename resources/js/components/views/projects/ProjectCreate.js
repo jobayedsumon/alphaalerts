@@ -64,11 +64,12 @@ const ProjectCreate = () => {
                         <CRow className="mb-3">
                             <CCol md="8">
                                 <CInputGroup>
-                                    <CFormLabel className="col-3">White Label Package</CFormLabel>
+                                    <CFormLabel className="col-3 ">White Label Package</CFormLabel>
                                     <CFormCheck name="white_label_package"></CFormCheck>
                                 </CInputGroup>
                             </CCol>
                         </CRow>
+
                         <CRow className="mb-3">
                             <CCol md="8">
                                 <CInputGroup>

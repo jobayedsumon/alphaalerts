@@ -7,7 +7,7 @@ import {
     CCardBody,
     CCardHeader,
     CCol,
-    CForm,
+    CForm, CFormCheck,
     CFormInput,
     CFormLabel, CFormSelect,
     CInputGroup, CModal, CModalBody, CModalFooter, CModalHeader, CModalTitle,
@@ -66,12 +66,16 @@ const Profile = () => {
         const email = e.target.email.value;
         const country_code = e.target.country_code.value;
         const phone_number = e.target.phone_number.value;
+        const whatsapp_notify = e.target.whatsapp_notify.checked;
+        const email_notify = e.target.email_notify.checked;
 
         fetchWrapper.put('/api/profile', {
             name: name,
             email: email,
             country_code: country_code,
             phone_number: phone_number,
+            whatsapp_notify: whatsapp_notify,
+            email_notify: email_notify,
         }).then((response) => {
             const data = response.data;
             if (data.status === 'success') {
@@ -210,6 +214,17 @@ const Profile = () => {
                                     </>
 
                                 }
+                            </CCol>
+                        </CRow>
+                        <CRow className="mb-3">
+                            <CCol md="8">
+                                <CInputGroup>
+                                    <CFormLabel className="col-3">Notification Methods</CFormLabel>
+                                    <CFormCheck name="whatsapp_notify" defaultChecked={user.notification_method?.whatsapp}></CFormCheck>
+                                    <CFormLabel className="col-2">&nbsp;Whatsapp</CFormLabel>
+                                    <CFormCheck name="email_notify" defaultChecked={user.notification_method?.email}></CFormCheck>
+                                    <CFormLabel className="col-2">&nbsp;Email</CFormLabel>
+                                </CInputGroup>
                             </CCol>
                         </CRow>
                         <CRow className="mt-4 mx-2">

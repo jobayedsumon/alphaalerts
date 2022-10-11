@@ -31,7 +31,7 @@ class Helper
                 ],
                 'json' => [
                     'originalURL' => $url,
-                    'domain' => 'alphabottracker.io'
+                    'domain' => 'alphaalerts.io'
                 ]
             ]);
 
