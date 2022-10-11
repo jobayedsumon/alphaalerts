@@ -19,4 +19,29 @@ class Helper
         ) );
 
     }
+
+    public static function shortUrl( $url )
+    {
+        try {
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('POST', 'https://api.short.io/links/public', [
+                'headers' => [
+                    'Authorization' => env('SHORTIO_API_KEY'),
+                    'Content-Type' => 'application/json'
+                ],
+                'json' => [
+                    'originalURL' => $url,
+                    'domain' => 'alphabottracker.io'
+                ]
+            ]);
+
+            $data = json_decode($response->getBody()->getContents());
+
+            return $data->shortURL;
+
+        } catch ( \Exception $e ) {
+            return $url;
+        }
+
+    }
 }

@@ -15640,10 +15640,12 @@ var ProjectCreate = function ProjectCreate() {
     var project_name = e.target.project_name.value;
     var server_id = e.target.server_id.value;
     var channel_ids = e.target.channel_ids.value;
+    var white_label_package = e.target.white_label_package.checked;
     _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].post('/api/projects', {
       project_name: project_name,
       server_id: server_id,
-      channel_ids: channel_ids
+      channel_ids: channel_ids,
+      white_label_package: white_label_package
     }).then(function (response) {
       var data = response.data;
 
@@ -15677,7 +15679,21 @@ var ProjectCreate = function ProjectCreate() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormInput, {
                   name: "project_name",
                   className: "col-4",
-                  type: "text"
+                  type: "text",
+                  required: true
+                })]
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CRow, {
+            className: "mb-3",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CCol, {
+              md: "8",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CInputGroup, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormLabel, {
+                  className: "col-3",
+                  children: "White Label Package"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormCheck, {
+                  name: "white_label_package"
                 })]
               })
             })
@@ -15692,7 +15708,8 @@ var ProjectCreate = function ProjectCreate() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormInput, {
                   name: "server_id",
                   className: "col-4",
-                  type: "text"
+                  type: "text",
+                  required: true
                 })]
               })
             })
@@ -15707,7 +15724,8 @@ var ProjectCreate = function ProjectCreate() {
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormInput, {
                   name: "channel_ids",
                   className: "col-4",
-                  type: "text"
+                  type: "text",
+                  required: true
                 })]
               })
             })
@@ -15793,10 +15811,12 @@ var ProjectEdit = function ProjectEdit() {
     var project_name = e.target.project_name.value;
     var server_id = e.target.server_id.value;
     var channel_ids = e.target.channel_ids.value;
+    var white_label_package = e.target.white_label_package.checked;
     _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].put('/api/projects/' + id, {
       project_name: project_name,
       server_id: server_id,
-      channel_ids: channel_ids
+      channel_ids: channel_ids,
+      white_label_package: white_label_package
     }).then(function (response) {
       var data = response.data;
 
@@ -15846,6 +15866,20 @@ var ProjectEdit = function ProjectEdit() {
                   className: "col-4",
                   type: "text",
                   defaultValue: project.project_name
+                })]
+              })
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CRow, {
+            className: "mb-3",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CCol, {
+              md: "8",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CInputGroup, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormLabel, {
+                  className: "col-3",
+                  children: "White Label Package"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormCheck, {
+                  name: "white_label_package",
+                  defaultChecked: project.white_label_package
                 })]
               })
             })

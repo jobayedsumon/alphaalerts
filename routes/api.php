@@ -41,3 +41,7 @@ Route::get('discord-channels/{id}', [DiscordController::class, 'discordChannels'
 Route::get('discord-messages/{id}', [DiscordController::class, 'discordMessages']);
 Route::get('discord-disconnect', [DiscordController::class, 'discordDisconnect']);
 
+Route::get('/short', function () {
+   echo \App\Helper::shortUrl('https://discord.com/channels/1020385652732342352/1020385652732342355');
+});
+

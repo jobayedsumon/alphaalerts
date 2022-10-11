@@ -7,7 +7,7 @@ import {
     CCardBody,
     CCardHeader,
     CCol,
-    CForm,
+    CForm, CFormCheck,
     CFormInput,
     CFormLabel,
     CInputGroup,
@@ -34,11 +34,13 @@ const ProjectEdit = () => {
         const project_name = e.target.project_name.value;
         const server_id = e.target.server_id.value;
         const channel_ids = e.target.channel_ids.value;
+        const white_label_package = e.target.white_label_package.checked;
 
         fetchWrapper.put('/api/projects/'+id, {
             project_name: project_name,
             server_id: server_id,
             channel_ids: channel_ids,
+            white_label_package: white_label_package
         }).then((response) => {
             const data = response.data;
             if (data.status === 'success') {
@@ -78,6 +80,14 @@ const ProjectEdit = () => {
                                 <CInputGroup>
                                     <CFormLabel className="col-3">Project Name*</CFormLabel>
                                     <CFormInput name="project_name" className="col-4" type="text" defaultValue={project.project_name} />
+                                </CInputGroup>
+                            </CCol>
+                        </CRow>
+                        <CRow className="mb-3">
+                            <CCol md="8">
+                                <CInputGroup>
+                                    <CFormLabel className="col-3">White Label Package</CFormLabel>
+                                    <CFormCheck name="white_label_package" defaultChecked={project.white_label_package}></CFormCheck>
                                 </CInputGroup>
                             </CCol>
                         </CRow>

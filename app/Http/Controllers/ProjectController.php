@@ -42,6 +42,7 @@ class ProjectController extends Controller
 
         $project = new Project();
         $project->project_name = $request->get('project_name');
+        $project->white_label_package = $request->get('white_label_package');
         $project->server_id = $request->get('server_id');
         $project->save();
 
@@ -85,6 +86,7 @@ class ProjectController extends Controller
         }
 
         $project->project_name = $request->get('project_name');
+        $project->white_label_package = $request->get('white_label_package');
         $project->server_id = $request->get('server_id');
         $project->save();
 

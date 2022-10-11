@@ -7,7 +7,7 @@ import {
     CCardBody,
     CCardHeader,
     CCol,
-    CForm,
+    CForm, CFormCheck,
     CFormInput,
     CFormLabel,
     CInputGroup,
@@ -26,11 +26,13 @@ const ProjectCreate = () => {
         const project_name = e.target.project_name.value;
         const server_id = e.target.server_id.value;
         const channel_ids = e.target.channel_ids.value;
+        const white_label_package = e.target.white_label_package.checked;
 
         fetchWrapper.post('/api/projects', {
             project_name: project_name,
             server_id: server_id,
             channel_ids: channel_ids,
+            white_label_package: white_label_package
         }).then((response) => {
             const data = response.data;
             if (data.status === 'success') {
@@ -55,7 +57,15 @@ const ProjectCreate = () => {
                             <CCol md="8">
                                 <CInputGroup>
                                     <CFormLabel className="col-3">Project Name*</CFormLabel>
-                                    <CFormInput name="project_name" className="col-4" type="text" />
+                                    <CFormInput name="project_name" className="col-4" type="text" required={true} />
+                                </CInputGroup>
+                            </CCol>
+                        </CRow>
+                        <CRow className="mb-3">
+                            <CCol md="8">
+                                <CInputGroup>
+                                    <CFormLabel className="col-3">White Label Package</CFormLabel>
+                                    <CFormCheck name="white_label_package"></CFormCheck>
                                 </CInputGroup>
                             </CCol>
                         </CRow>
@@ -63,7 +73,7 @@ const ProjectCreate = () => {
                             <CCol md="8">
                                 <CInputGroup>
                                     <CFormLabel className="col-3">Server ID*</CFormLabel>
-                                    <CFormInput name="server_id" className="col-4" type="text" />
+                                    <CFormInput name="server_id" className="col-4" type="text" required={true} />
                                 </CInputGroup>
                             </CCol>
                         </CRow>
@@ -71,7 +81,7 @@ const ProjectCreate = () => {
                             <CCol md="8">
                                 <CInputGroup>
                                     <CFormLabel className="col-3">Channel IDs*</CFormLabel>
-                                    <CFormInput name="channel_ids" className="col-4" type="text" />
+                                    <CFormInput name="channel_ids" className="col-4" type="text" required={true} />
                                 </CInputGroup>
                             </CCol>
                         </CRow>

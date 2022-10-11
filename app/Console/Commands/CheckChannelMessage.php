@@ -45,16 +45,22 @@ class CheckChannelMessage extends Command
         foreach ($channel_notifications as $channel_notification) {
             try {
                 $channel = Discord::channel($channel_notification->channel_id);
+
                 if ($channel && isset($channel->last_message_id) && $channel->last_message_id != $channel_notification->last_message_id) {
+
                     if ($channel_notification->user->country_code && $channel_notification->user->phone_number && $channel_notification->user->phone_verified_at) {
+
                         $mobile_no = $channel_notification->user->country_code . $channel_notification->user->phone_number;
+
                         $lastMessage = Discord::message($channel->id, $channel->last_message_id);
-                        $message = 'A new message has arrived in '.$channel->name.' on '
-                            .$channel_notification->server_name.': https://discord.com/channels/'
-                            . $channel->guild_id . '/' . $channel->id .' Message contains: [ '
-                            .@$lastMessage->content.' ] - NFTY Dash';
-                        var_dump($message);
+                        $channelLink = Helper::shortUrl('https://discord.com/channels/'.$channel->guild_id.'/'.$channel->id);
+                        $project = @$channel_notification->channel->project;
+                        $brandText = @$project->white_label_package ? $project->project_name : 'Genus Alpha Tracker';
+
+                        $message = @$lastMessage->content.' | '.$channel->name.' | '.$channel_notification->server_name.' | '.$channelLink.' - '.$brandText;
+
                         Helper::sendWhatsapp($mobile_no, $message);
+
                         $channel_notification->last_message_id = $channel->last_message_id;
                         $channel_notification->save();
                     }
