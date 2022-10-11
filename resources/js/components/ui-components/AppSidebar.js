@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import { CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler } from '@coreui/react'
+import {CImage, CSidebar, CSidebarBrand, CSidebarNav, CSidebarToggler} from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 
 import { AppSidebarNav } from './AppSidebarNav'
@@ -13,6 +13,7 @@ import 'simplebar/dist/simplebar.min.css'
 import navigation from '../_nav'
 import {logoNegative} from "../assets/brand/logo-negative";
 import {sygnet} from "../assets/brand/sygnet";
+import logo from "../assets/images/logo.png";
 
 const AppSidebar = () => {
   const dispatch = useDispatch()
@@ -42,7 +43,7 @@ const AppSidebar = () => {
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
-          Alpha Bot Tracker
+          <CImage src={logo} height={60} />
         {/*<CIcon className="sidebar-brand-full" icon={logoNegative} height={35} />*/}
         {/*<CIcon className="sidebar-brand-narrow" icon={sygnet} height={35} />*/}
       </CSidebarBrand>

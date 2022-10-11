@@ -1,3 +1,31 @@
+/* import font from public folder */
+@font-face {
+  font-family: 'DINEngschrift';
+  src: url('../fonts/DINEngschrift-Regular.ttf') format('truetype');
+}
+
+* {
+    font-family: 'DINEngschrift', sans-serif !important;
+}
+
 a {
     text-decoration: none !important;
 }
+
+.loginPage {
+    background: url("../images/background.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.btn-primary {
+    background-color: #6f3887 !important;
+    border-color: #6f3887 !important;
+}
+
+.form-control {
+    background-color: #0c0439 !important;
+    border-color: #455257 !important;
+    color: #582c75 !important;
+    height: 50px;
+}
+
