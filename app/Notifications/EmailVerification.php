@@ -47,7 +47,7 @@ class EmailVerification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('Alpha Bot Tracker - Verify your email address')
+            ->subject('Alpha Alerts - Verify your email address')
             ->line(Lang::get('Please click the button below to verify your email address.'))
             ->action(Lang::get('Verify Email Address'),  env('APP_URL').'/api/verify-email/' . $notifiable->id . '/' . $this->hash)
             ->line(Lang::get('If you did not create an account, no further action is required.'));
