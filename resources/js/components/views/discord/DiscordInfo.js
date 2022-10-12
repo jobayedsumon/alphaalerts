@@ -45,7 +45,7 @@ const DiscordInfo = () => {
         <CCardHeader className="fs-5 d-flex justify-content-between">
             <span>Discord Info</span>
             {discordUser && discordUser.id ?
-                <CButton className="btn-danger" onClick={disconnectDiscord}>Disconnect Discord</CButton>
+                <CButton className="btn-primary" onClick={disconnectDiscord}>Disconnect Discord</CButton>
                 : <a className="btn btn-primary" href={`/api/discord-connect?token=${token}`}>Connect Discord</a>}
 
         </CCardHeader>

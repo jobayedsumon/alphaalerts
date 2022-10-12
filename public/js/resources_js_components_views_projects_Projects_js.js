@@ -106,15 +106,15 @@ var Projects = function Projects() {
           to: "/projects/".concat(row.id, "/edit"),
           className: "btn btn-primary btn-sm",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
-            className: "fa fa-edit"
+            className: "fa fa-edit text-success"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_4__.CButton, {
-          className: "btn btn-danger btn-sm mx-2",
+          className: "btn btn-primary btn-sm mx-2",
           onClick: function onClick() {
             return handleDelete(row.id);
           },
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
-            className: "fa fa-trash"
+            className: "fa fa-trash text-danger"
           })
         })]
       });

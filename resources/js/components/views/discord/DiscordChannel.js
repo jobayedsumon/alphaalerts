@@ -54,14 +54,14 @@ const DiscordChannel = () => {
 
                                     </div>
                                     <div className="mx-2">
-                                        <Link className="text-decoration-none text-black">{message.author.username}</Link>
+                                        <Link className="text-decoration-none">{message.author.username}</Link>
                                         <br/>
-                                        <small className="text-muted">{
+                                        <small className="text-black">{
                                            moment(message.timestamp).fromNow()
                                         }</small>
                                     </div>
                                 </div>
-                                <div className="mt-2 rounded p-2 bg-light text-black fs-6 text-left">
+                                <div className="mt-2 rounded p-2 fs-6 text-left chatMessage">
                                     <div dangerouslySetInnerHTML={
                                         {__html: message.content}
                                     }></div>

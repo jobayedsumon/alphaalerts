@@ -14,7 +14,7 @@ import {
     CRow
 } from "@coreui/react";
 import fetchWrapper from "../../helpers/fetchWrapper";
-import {swalError, swalSuccess} from "../../helpers/common";
+import {swalConfirm, swalError, swalSuccess} from "../../helpers/common";
 import {useDispatch, useSelector} from "react-redux";
 import countries from "../../helpers/countries";
 import CIcon from "@coreui/icons-react";
@@ -188,7 +188,7 @@ const Profile = () => {
                             <CCol md="8">
                                 <CInputGroup>
                                     <CFormLabel className="col-3">Country Code*</CFormLabel>
-                                    <CFormSelect name="country_code" aria-label="Country Code" defaultValue={user.country_code} required={true} onChange={eventChange}>
+                                    <CFormSelect className="form-control" name="country_code" aria-label="Country Code" defaultValue={user.country_code} required={true} onChange={eventChange}>
                                         <option>Select Country</option>
                                         {
                                             countries && countries.map((country, index) =>
@@ -229,7 +229,7 @@ const Profile = () => {
                         </CRow>
                         <CRow className="mt-4 mx-2">
                             <CButton type="submit" color="primary" className="col-2">Submit</CButton>
-                            <Link to="/#/" className="btn btn-danger col-2 mx-2">Cancel</Link>
+                            <Link to="/#/" className="btn btn-secondary col-2 mx-2">Cancel</Link>
                         </CRow>
                     </CForm>
                 </CCardBody>

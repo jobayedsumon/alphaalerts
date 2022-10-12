@@ -8,7 +8,7 @@ import {isAdmin} from "../helpers/authHelper";
 
 const AppContent = () => {
     return (
-        <CContainer lg>
+        <CContainer lg className="mt-5">
             <Suspense fallback={<CSpinner color="primary"/>}>
                 <Routes>
                     {routes.map((route, idx) => {

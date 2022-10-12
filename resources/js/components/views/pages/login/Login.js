@@ -62,9 +62,9 @@ const Login = () => {
                     <CRow className="justify-content-center align-items-center">
 
                         <CCol md={6} className="text-center">
-                            <CImage src={logo} />
+                            <CImage src={logo}  />
                             <CForm onSubmit={handleSubmit}>
-                                <h1 className="text-white text-center">Sign In to your account</h1>
+                                <h1 className="text-white text-center">Alpha Alerts</h1>
                                 <CInputGroup className="mb-3">
                                     <CFormInput type="email" placeholder="Email" name="email"/>
                                 </CInputGroup>

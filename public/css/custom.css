@@ -12,24 +12,70 @@ a {
     text-decoration: none !important;
 }
 
+.sidebar-nav {
+    background-color: #52396f !important;
+}
+
+.header, .dropdown-header {
+    background-color: #4e2e6e !important;
+    color: #fff !important;
+}
+
+.header-toggler, .nav-link, .breadcrumb-item, a {
+    color: #fff !important;
+}
+
+.body, .dropdown-menu {
+    background-color: #5A4377 !important;
+}
+
+.dropdown-item:hover {
+    background-color: inherit !important;
+}
+
+.sidebar-brand, .sidebar-toggler {
+    background-color: #4e2e6e !important;
+}
+
 .loginPage {
     background: url("../images/background.png") no-repeat center center fixed;
     background-size: cover;
 }
 
-.btn-primary {
+.btn-primary, .swal2-confirm {
     background-color: #6f3887 !important;
     border-color: #6f3887 !important;
+}
+
+.btn-primary:focus, .swal2-confirm:focus {
+    box-shadow: none !important;
 }
 
 .form-control {
     background-color: #0c0439 !important;
     border-color: #455257 !important;
-    color: #582c75 !important;
+    color: #fff !important;
     height: 50px;
 }
 
 .walletButton {
     margin-top: 10rem !important;
+}
+
+.card, .modal-content, .swal2-modal {
+    background-color: #4e2e6e !important;
+    color: #fff !important;
+}
+
+.form-check-input:checked, .chatMessage {
+    background-color: #0c0439 !important;
+    border-color: #0c0439 !important;
+}
+
+.header {
+    border-bottom: 1px solid #0c0439 !important;
+}
+.header-divider {
+    border-top: 1px solid #0c0439 !important;
 }
 

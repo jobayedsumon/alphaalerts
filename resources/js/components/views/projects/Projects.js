@@ -60,10 +60,10 @@ const Projects = () => {
             name: 'ACTIONS',
             selector: row => <div>
                 <Link to={`/projects/${row.id}/edit`} className="btn btn-primary btn-sm">
-                    <i className="fa fa-edit"></i>
+                    <i className="fa fa-edit text-success"></i>
                 </Link>
-                <CButton className="btn btn-danger btn-sm mx-2" onClick={() => handleDelete(row.id)}>
-                    <i className="fa fa-trash"></i>
+                <CButton className="btn btn-primary btn-sm mx-2" onClick={() => handleDelete(row.id)}>
+                    <i className="fa fa-trash text-danger"></i>
                 </CButton>
             </div>,
         },

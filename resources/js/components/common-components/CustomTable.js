@@ -1,7 +1,20 @@
 import React, { useMemo } from "react";
-import DataTable from "react-data-table-component";
+import DataTable, {createTheme} from "react-data-table-component";
 import FilterComponent from "./FilterComponent";
 import {Link} from "react-router-dom";
+
+createTheme('solarized', {
+    text: {
+        primary: '#fff',
+        secondary: '#fff',
+    },
+    background: {
+        default: '#4e2e6e',
+    },
+    striped: {
+        default: '#5A4377',
+    }
+}, 'dark');
 
 const CustomTable = (props) => {
     const [filterText, setFilterText] = React.useState("");
@@ -54,6 +67,7 @@ const CustomTable = (props) => {
             subHeader
             subHeaderComponent={subHeaderComponent}
             subHeaderAlign="left"
+            theme="solarized"
         />
     );
 };

@@ -37,8 +37,10 @@ const FilterComponent = ({ filterText, onFilter, onClear }) => (
             placeholder="Filter table data..."
             value={filterText}
             onChange={onFilter}
+            className="form-control"
+            style={{ height: "35px" }}
         />
-        <ClearButton onClick={onClear}>X</ClearButton>
+        <ClearButton className="btn btn-primary" onClick={onClear}>X</ClearButton>
     </div>
 );
 

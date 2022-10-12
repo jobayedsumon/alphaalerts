@@ -24,7 +24,7 @@ const AppHeader = () => {
   const sidebarShow = useSelector((state) => state.sidebarShow)
 
   return (
-    <CHeader position="sticky" className="mb-4">
+    <CHeader position="sticky">
       <CContainer fluid>
         <CHeaderToggler
           className="ps-1"
@@ -33,7 +33,9 @@ const AppHeader = () => {
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
         <CHeaderBrand className="mx-auto d-md-none" to="/">
+            <strong>Alpha&nbsp;</strong>
             <CImage src={logo} height={50} />
+            <strong>&nbsp;Alerts</strong>
         </CHeaderBrand>
         {/*<CHeaderNav className="d-none d-md-flex me-auto">*/}
         {/*  <CNavItem>*/}

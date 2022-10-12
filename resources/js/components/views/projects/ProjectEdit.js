@@ -109,7 +109,7 @@ const ProjectEdit = () => {
                         </CRow>
                         <CRow className="mt-4 mx-2">
                             <CButton type="submit" color="primary" className="col-2">Submit</CButton>
-                            <Link to="/projects" className="btn btn-danger col-2 mx-2">Cancel</Link>
+                            <Link to="/projects" className="btn btn-secondary col-2 mx-2">Cancel</Link>
                         </CRow>
                     </CForm>
                 </CCardBody>

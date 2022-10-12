@@ -69,7 +69,7 @@ const AppHeaderDropdown = () => {
         {/*    42*/}
         {/*  </CBadge>*/}
         {/*</CDropdownItem>*/}
-        <CDropdownHeader className="bg-light fw-semibold py-2">
+        <CDropdownHeader className="fw-semibold py-2">
             <div className="text-center">{user.name}</div>
             <small>{user.email}</small>
         </CDropdownHeader>

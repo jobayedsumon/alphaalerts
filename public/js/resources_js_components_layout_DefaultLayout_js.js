@@ -12494,6 +12494,18 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+(0,react_data_table_component__WEBPACK_IMPORTED_MODULE_1__.createTheme)('solarized', {
+  text: {
+    primary: '#fff',
+    secondary: '#fff'
+  },
+  background: {
+    "default": '#4e2e6e'
+  },
+  striped: {
+    "default": '#5A4377'
+  }
+}, 'dark');
 
 var CustomTable = function CustomTable(props) {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState(""),
@@ -12543,7 +12555,8 @@ var CustomTable = function CustomTable(props) {
     pagination: true,
     subHeader: true,
     subHeaderComponent: subHeaderComponent,
-    subHeaderAlign: "left"
+    subHeaderAlign: "left",
+    theme: "solarized"
   });
 };
 
@@ -12593,8 +12606,13 @@ var FilterComponent = function FilterComponent(_ref) {
       type: "text",
       placeholder: "Filter table data...",
       value: filterText,
-      onChange: onFilter
+      onChange: onFilter,
+      className: "form-control",
+      style: {
+        height: "35px"
+      }
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(ClearButton, {
+      className: "btn btn-primary",
       onClick: onClear,
       children: "X"
     })]
@@ -13987,6 +14005,7 @@ __webpack_require__.r(__webpack_exports__);
 var AppContent = function AppContent() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CContainer, {
     lg: true,
+    className: "mt-5",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
       fallback: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CSpinner, {
         color: "primary"
@@ -14111,7 +14130,6 @@ var AppHeader = function AppHeader() {
   });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeader, {
     position: "sticky",
-    className: "mb-4",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CContainer, {
       fluid: true,
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderToggler, {
@@ -14126,13 +14144,17 @@ var AppHeader = function AppHeader() {
           icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_8__.cilMenu,
           size: "lg"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderBrand, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderBrand, {
         className: "mx-auto d-md-none",
         to: "/",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CImage, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+          children: "Alpha\xA0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CImage, {
           src: _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_6__["default"],
           height: 50
-        })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+          children: "\xA0Alerts"
+        })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderNav, {
         className: "ms-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_header_index__WEBPACK_IMPORTED_MODULE_5__.AppHeaderDropdown, {})
@@ -14219,13 +14241,17 @@ var AppSidebar = function AppSidebar() {
         sidebarShow: visible
       });
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CSidebarBrand, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CSidebarBrand, {
       className: "d-none d-md-flex",
       to: "/",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CImage, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h4", {
+        children: "Alpha\xA0"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CImage, {
         src: _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_10__["default"],
         height: 60
-      })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h4", {
+        children: "\xA0Alerts"
+      })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CSidebarNav, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(simplebar_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_AppSidebarNav__WEBPACK_IMPORTED_MODULE_4__.AppSidebarNav, {
@@ -14603,7 +14629,7 @@ var AppHeaderDropdown = function AppHeaderDropdown() {
       className: "pt-0",
       placement: "bottom-end",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CDropdownHeader, {
-        className: "bg-light fw-semibold py-2",
+        className: "fw-semibold py-2",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "text-center",
           children: user.name
@@ -14958,6 +14984,7 @@ var Profile = function Profile() {
                   className: "col-3",
                   children: "Country Code*"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CFormSelect, {
+                  className: "form-control",
                   name: "country_code",
                   "aria-label": "Country Code",
                   defaultValue: user.country_code,
@@ -15040,7 +15067,7 @@ var Profile = function Profile() {
               children: "Submit"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
               to: "/#/",
-              className: "btn btn-danger col-2 mx-2",
+              className: "btn btn-secondary col-2 mx-2",
               children: "Cancel"
             })]
           })]
@@ -15299,15 +15326,15 @@ var DiscordChannel = function DiscordChannel() {
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)("div", {
                     className: "mx-2",
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
-                      className: "text-decoration-none text-black",
+                      className: "text-decoration-none",
                       children: message.author.username
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("small", {
-                      className: "text-muted",
+                      className: "text-black",
                       children: moment__WEBPACK_IMPORTED_MODULE_6___default()(message.timestamp).fromNow()
                     })]
                   })]
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
-                  className: "mt-2 rounded p-2 bg-light text-black fs-6 text-left",
+                  className: "mt-2 rounded p-2 fs-6 text-left chatMessage",
                   children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)("div", {
                     dangerouslySetInnerHTML: {
                       __html: message.content
@@ -15409,7 +15436,7 @@ var DiscordInfo = function DiscordInfo() {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
         children: "Discord Info"
       }), discordUser && discordUser.id ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_0__.CButton, {
-        className: "btn-danger",
+        className: "btn-primary",
         onClick: disconnectDiscord,
         children: "Disconnect Discord"
       }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
@@ -15760,7 +15787,7 @@ var ProjectCreate = function ProjectCreate() {
               children: "Submit"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/projects",
-              className: "btn btn-danger col-2 mx-2",
+              className: "btn btn-secondary col-2 mx-2",
               children: "Cancel"
             })]
           })]
@@ -15948,7 +15975,7 @@ var ProjectEdit = function ProjectEdit() {
               children: "Submit"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               to: "/projects",
-              className: "btn btn-danger col-2 mx-2",
+              className: "btn btn-secondary col-2 mx-2",
               children: "Cancel"
             })]
           })]
