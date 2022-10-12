@@ -79,3 +79,6 @@ a {
     border-top: 1px solid #0c0439 !important;
 }
 
+.loginButtons {
+    border-radius: 5px !important;
+}
