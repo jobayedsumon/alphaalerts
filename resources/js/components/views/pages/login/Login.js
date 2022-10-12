@@ -1,22 +1,15 @@
 import React from 'react'
-import {Link, Navigate} from 'react-router-dom'
+import { Navigate} from 'react-router-dom'
 import {
     CButton,
-    CCard,
-    CCardBody,
-    CCardGroup,
     CCol,
     CContainer,
     CForm,
     CFormInput, CImage,
     CInputGroup,
-    CInputGroupText,
     CRow,
 } from '@coreui/react'
-import CIcon from '@coreui/icons-react'
-import {cilLockLocked, cilUser} from '@coreui/icons'
-import axios from "axios";
-import {isLoggedIn, login, setUserToken, walletConnect} from "../../../helpers/authHelper";
+import {isLoggedIn, login, walletConnect} from "../../../helpers/authHelper";
 import {swalError} from "../../../helpers/common";
 import {useDispatch} from "react-redux";
 import fetchWrapper from "../../../helpers/fetchWrapper";
@@ -62,7 +55,7 @@ const Login = () => {
                     <CRow className="justify-content-center align-items-center">
 
                         <CCol md={6} className="text-center">
-                            <CImage src={logo}  />
+                            <CImage src={logo} width={100} />
                             <CForm onSubmit={handleSubmit}>
                                 <h1 className="text-white text-center">Alpha Alerts</h1>
                                 <CInputGroup className="mb-3">
@@ -75,21 +68,12 @@ const Login = () => {
                                         name="password"
                                     />
                                 </CInputGroup>
-                                <CRow className="text-center">
-                                    <CCol md={12}>
-                                        <CButton color="primary" type="submit" className="px-4">
-                                            Login
-                                        </CButton>
-                                    </CCol>
-                                </CRow>
+                                <CInputGroup className="d-flex justify-content-evenly align-items-center">
+                                    <CButton type="submit">Login</CButton>
+                                    <h6 className="text-white">Or</h6>
+                                    <CButton onClick={walletConnectHandler}>Connect Wallet</CButton>
+                                </CInputGroup>
                             </CForm>
-                        </CCol>
-                        <CCol md={2} className="walletButton">
-                            <div className="d-flex align-items-center">
-                                <h6 className="text-white">OR</h6>
-                                <CButton className="mx-3" onClick={walletConnectHandler}>CONNECT WALLET</CButton>
-                            </div>
-
                         </CCol>
                     </CRow>
                 </CContainer>
