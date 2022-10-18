@@ -31,7 +31,7 @@ class Helper
                 ],
                 'json' => [
                     'originalURL' => $url,
-                    'domain' => 'alphaalerts.io'
+                    'domain' => 'go.alphaalerts.io'
                 ]
             ]);
 

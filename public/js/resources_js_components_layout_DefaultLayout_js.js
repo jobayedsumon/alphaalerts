@@ -14144,17 +14144,13 @@ var AppHeader = function AppHeader() {
           icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_8__.cilMenu,
           size: "lg"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderBrand, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderBrand, {
         className: "mx-auto d-md-none",
         to: "/",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
-          children: "Alpha\xA0"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CImage, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CImage, {
           src: _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_6__["default"],
           height: 50
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
-          children: "\xA0Alerts"
-        })]
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CHeaderNav, {
         className: "ms-3",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_header_index__WEBPACK_IMPORTED_MODULE_5__.AppHeaderDropdown, {})
@@ -14241,17 +14237,13 @@ var AppSidebar = function AppSidebar() {
         sidebarShow: visible
       });
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CSidebarBrand, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CSidebarBrand, {
       className: "d-none d-md-flex",
       to: "/",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h4", {
-        children: "Alpha\xA0"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CImage, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CImage, {
         src: _assets_images_logo_png__WEBPACK_IMPORTED_MODULE_10__["default"],
         height: 60
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)("h4", {
-        children: "\xA0Alerts"
-      })]
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_2__.CSidebarNav, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(simplebar_react__WEBPACK_IMPORTED_MODULE_5__["default"], {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_AppSidebarNav__WEBPACK_IMPORTED_MODULE_4__.AppSidebarNav, {
@@ -14797,6 +14789,21 @@ var Profile = function Profile() {
       visible = _useState6[0],
       setVisible = _useState6[1];
 
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      emailLoading = _useState8[0],
+      setEmailLoading = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState10 = _slicedToArray(_useState9, 2),
+      phoneLoading = _useState10[0],
+      setPhoneLoading = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState12 = _slicedToArray(_useState11, 2),
+      verifyLoading = _useState12[0],
+      setVerifyLoading = _useState12[1];
+
   var eventChange = function eventChange(e) {
     setVerifyData(_objectSpread(_objectSpread({}, verifyData), {}, _defineProperty({}, e.target.name, e.target.value)));
   };
@@ -14856,6 +14863,7 @@ var Profile = function Profile() {
 
   var verificationCode = function verificationCode() {
     if (verifyData.country_code && verifyData.phone_number) {
+      setPhoneLoading(true);
       _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].post('/api/verification-code', {
         country_code: verifyData.country_code,
         phone_number: verifyData.phone_number
@@ -14869,6 +14877,8 @@ var Profile = function Profile() {
         }
       })["catch"](function (error) {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending verification code");
+      })["finally"](function () {
+        setPhoneLoading(false);
       });
     } else {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Please enter your phone number and country code");
@@ -14876,6 +14886,7 @@ var Profile = function Profile() {
   };
 
   var verifyPhoneNumber = function verifyPhoneNumber(e) {
+    setVerifyLoading(true);
     e.preventDefault();
     var verification_code = e.target.verification_code.value;
     _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].post('/api/verify-phone-number', {
@@ -14893,11 +14904,14 @@ var Profile = function Profile() {
       }
     })["catch"](function (error) {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error verifying phone number");
+    })["finally"](function () {
+      setVerifyLoading(false);
     });
   };
 
   var emailVerification = function emailVerification() {
     if (verifyData.email) {
+      setEmailLoading(true);
       _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_2__["default"].post('/api/email-verification', {
         email: verifyData.email
       }).then(function (response) {
@@ -14910,6 +14924,8 @@ var Profile = function Profile() {
         }
       })["catch"](function (error) {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending email verification link");
+      })["finally"](function () {
+        setEmailLoading(false);
       });
     } else {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Please add your email address");
@@ -14959,8 +14975,8 @@ var Profile = function Profile() {
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CCol, {
-              md: "2",
-              className: "px-0",
+              md: "4",
+              className: "px-0 d-flex",
               children: user.email && user.email_verified_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                 title: "Verified",
                 className: "fa fa-check-circle text-success mt-2"
@@ -14968,10 +14984,15 @@ var Profile = function Profile() {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                   title: "Not verified",
                   className: "fa fa-exclamation-circle mt-2 text-warning"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
                   className: "mx-5",
                   onClick: emailVerification,
-                  children: "Verify"
+                  disabled: emailLoading,
+                  children: [emailLoading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CSpinner, {
+                    component: "span",
+                    size: "sm",
+                    "aria-hidden": "true"
+                  }), " Verify"]
                 })]
               })
             })]
@@ -15019,8 +15040,8 @@ var Profile = function Profile() {
                 })]
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CCol, {
-              md: "2",
-              className: "px-0",
+              md: "4",
+              className: "px-0 d-flex",
               children: user.phone_number && user.phone_verified_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                 title: "Verified",
                 className: "fa fa-check-circle text-success mt-2"
@@ -15028,10 +15049,15 @@ var Profile = function Profile() {
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("i", {
                   title: "Not verified",
                   className: "fa fa-exclamation-circle mt-2 text-warning"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
                   className: "mx-5",
                   onClick: verificationCode,
-                  children: "Verify"
+                  disabled: phoneLoading,
+                  children: [phoneLoading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CSpinner, {
+                    component: "span",
+                    size: "sm",
+                    "aria-hidden": "true"
+                  }), " Verify"]
                 })]
               })
             })]
@@ -15103,10 +15129,15 @@ var Profile = function Profile() {
               return setVisible(false);
             },
             children: "Cancel"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CButton, {
             type: "submit",
             color: "primary",
-            children: "Submit"
+            disabled: verifyLoading,
+            children: [verifyLoading && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_coreui_react__WEBPACK_IMPORTED_MODULE_1__.CSpinner, {
+              component: "span",
+              size: "sm",
+              "aria-hidden": "true"
+            }), " Submit"]
           })]
         })]
       })

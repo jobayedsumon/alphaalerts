@@ -68,11 +68,17 @@ const Login = () => {
                                         name="password"
                                     />
                                 </CInputGroup>
-                                <CInputGroup className="d-flex justify-content-between align-items-center">
-                                    <CButton className="loginButtons" type="submit">Login</CButton>
-                                    <h6 className="text-white">Or</h6>
-                                    <CButton className="loginButtons" onClick={walletConnectHandler}>Connect Wallet</CButton>
-                                </CInputGroup>
+                                <CRow>
+                                    <CCol md={5}>
+                                        <CButton className="loginButtons" type="submit">Login</CButton>
+                                    </CCol>
+                                    <CCol md={2}>
+                                        <h6 className="text-white">Or</h6>
+                                    </CCol>
+                                    <CCol md={5}>
+                                        <CButton className="loginButtons" onClick={walletConnectHandler}>Connect Wallet</CButton>
+                                    </CCol>
+                                </CRow>
                             </CForm>
                         </CCol>
                     </CRow>

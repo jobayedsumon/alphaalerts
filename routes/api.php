@@ -41,7 +41,18 @@ Route::get('discord-channels/{id}', [DiscordController::class, 'discordChannels'
 Route::get('discord-messages/{id}', [DiscordController::class, 'discordMessages']);
 Route::get('discord-disconnect', [DiscordController::class, 'discordDisconnect']);
 
-Route::get('/short', function () {
+Route::get('/short-test', function () {
    echo \App\Helper::shortUrl('https://discord.com/channels/1020385652732342352/1020385652732342355');
 });
 
+Route::get('/mail-test', function () {
+    try {
+       \Illuminate\Support\Facades\Mail::raw('This is a test email', function ($message) {
+           $message->to('jobayedsumon@hotmail.com');
+              $message->subject('Test Email');
+         });
+       echo 'Email sent';
+    } catch (\Exception $e) {
+        echo dd($e);
+    }
+});

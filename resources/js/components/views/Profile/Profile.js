@@ -11,7 +11,7 @@ import {
     CFormInput,
     CFormLabel, CFormSelect,
     CInputGroup, CModal, CModalBody, CModalFooter, CModalHeader, CModalTitle,
-    CRow
+    CRow, CSpinner
 } from "@coreui/react";
 import fetchWrapper from "../../helpers/fetchWrapper";
 import {swalConfirm, swalError, swalSuccess} from "../../helpers/common";
@@ -33,6 +33,9 @@ const Profile = () => {
     });
 
     const [visible, setVisible] = useState(false);
+    const [emailLoading, setEmailLoading] = useState(false);
+    const [phoneLoading, setPhoneLoading] = useState(false);
+    const [verifyLoading, setVerifyLoading] = useState(false);
 
     const eventChange = (e) => {
         setVerifyData({...verifyData, [e.target.name]: e.target.value});
@@ -92,6 +95,7 @@ const Profile = () => {
 
     const verificationCode = () => {
         if (verifyData.country_code && verifyData.phone_number) {
+            setPhoneLoading(true);
             fetchWrapper.post('/api/verification-code', {
                 country_code: verifyData.country_code,
                 phone_number: verifyData.phone_number,
@@ -104,6 +108,8 @@ const Profile = () => {
                 }
             }).catch((error) => {
                 swalError("Error sending verification code");
+            }).finally(() => {
+                setPhoneLoading(false);
             });
         } else {
             swalError("Please enter your phone number and country code");
@@ -111,6 +117,7 @@ const Profile = () => {
     }
 
     const verifyPhoneNumber = (e) => {
+        setVerifyLoading(true);
         e.preventDefault();
 
         const verification_code = e.target.verification_code.value;
@@ -129,11 +136,14 @@ const Profile = () => {
             }
         }).catch((error) => {
             swalError("Error verifying phone number");
+        }).finally(() => {
+            setVerifyLoading(false);
         });
     }
 
     const emailVerification = () => {
         if (verifyData.email) {
+            setEmailLoading(true);
             fetchWrapper.post('/api/email-verification', {
                 email: verifyData.email,
             }).then((response) => {
@@ -145,6 +155,8 @@ const Profile = () => {
                 }
             }).catch((error) => {
                 swalError("Error sending email verification link");
+            }).finally(() => {
+                setEmailLoading(false);
             });
         } else {
             swalError("Please add your email address");
@@ -173,12 +185,14 @@ const Profile = () => {
                                     <CFormInput name="email" className="col-4" type="email" defaultValue={user.email} required={true} onChange={eventChange} />
                                 </CInputGroup>
                             </CCol>
-                            <CCol md="2" className="px-0">
+                            <CCol md="4" className="px-0 d-flex">
                                 {user.email && user.email_verified_at ?
                                     <i title="Verified" className="fa fa-check-circle text-success mt-2"></i> :
                                     <>
                                         <i title="Not verified" className="fa fa-exclamation-circle mt-2 text-warning"></i>
-                                        <CButton className="mx-5" onClick={emailVerification}>Verify</CButton>
+                                        <CButton className="mx-5" onClick={emailVerification} disabled={emailLoading}>
+                                            {emailLoading && <CSpinner component="span" size="sm" aria-hidden="true"/>} Verify
+                                        </CButton>
                                     </>
 
                                 }
@@ -205,12 +219,14 @@ const Profile = () => {
                                     <CFormInput name="phone_number" className="col-4" type="text" defaultValue={user.phone_number} required={true} onChange={eventChange} />
                                 </CInputGroup>
                             </CCol>
-                            <CCol md="2" className="px-0">
+                            <CCol md="4" className="px-0 d-flex">
                                 {user.phone_number && user.phone_verified_at ?
                                     <i title="Verified" className="fa fa-check-circle text-success mt-2"></i> :
                                     <>
                                         <i title="Not verified" className="fa fa-exclamation-circle mt-2 text-warning"></i>
-                                        <CButton className="mx-5" onClick={verificationCode}>Verify</CButton>
+                                        <CButton className="mx-5" onClick={verificationCode} disabled={phoneLoading}>
+                                            {phoneLoading && <CSpinner component="span" size="sm" aria-hidden="true"/>} Verify
+                                        </CButton>
                                     </>
 
                                 }
@@ -251,7 +267,9 @@ const Profile = () => {
                     <CButton color="secondary" onClick={() => setVisible(false)}>
                         Cancel
                     </CButton>
-                    <CButton type="submit" color="primary">Submit</CButton>
+                    <CButton type="submit" color="primary" disabled={verifyLoading}>
+                        {verifyLoading && <CSpinner component="span" size="sm" aria-hidden="true"/>} Submit
+                    </CButton>
                 </CModalFooter>
             </CForm>
             </CModal>

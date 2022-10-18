@@ -56,10 +56,8 @@ class CheckChannelMessage extends Command
 
                         $lastMessage = Discord::message($channel->id, $channel->last_message_id);
                         $channelLink = Helper::shortUrl('https://discord.com/channels/'.$channel->guild_id.'/'.$channel->id);
-                        $project = @$channel_notification->channel->project;
-                        $brandText = @$project->white_label_package ? $project->project_name : 'Genus Alpha Tracker';
 
-                        $message = @$lastMessage->content.' | '.$channel->name.' | '.$channel_notification->server_name.' | '.$channelLink.' - '.$brandText;
+                        $message = 'New alert in '.$channel->name.' | '.$channel_notification->server_name.': '.@$lastMessage->content.' | Please click here to view the full message: '.$channelLink.' | Powered by Alpha Alerts';
 
                         if ($notificationMethod->whatsapp && $user->country_code && $user->phone_number && $user->phone_verified_at) {
                             $mobile_no = $user->country_code . $user->phone_number;
@@ -72,7 +70,6 @@ class CheckChannelMessage extends Command
                             $data['channel_name'] = $channel->name;
                             $data['server_name'] = $channel_notification->server_name;
                             $data['channel_link'] = $channelLink;
-                            $data['brand_text'] = $brandText;
 
                             $user->notify(new ChannelMessage($data));
                         }

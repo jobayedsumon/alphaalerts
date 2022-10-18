@@ -44,10 +44,11 @@ class ChannelMessage extends Notification
     {
         return (new MailMessage)
                     ->subject('Alpha Alerts - New message in '.$this->data['channel_name'])
-                    ->line('A new message has been posted in '.$this->data['channel_name'] . ' on ' . $this->data['server_name'])
-                    ->line('Message: '.$this->data['message'])
+                    ->line('New alert in '.$this->data['channel_name'] . ' | ' . $this->data['server_name'])
+                    ->line($this->data['message'])
+                    ->line('Please click here to view the full message: ')
                     ->action('View Message', $this->data['channel_link'])
-                    ->line('From: '.$this->data['brand_text']);
+                    ->line('Powered by Alpha Alerts');
 
     }
 
