@@ -39,7 +39,7 @@ class AuthController extends Controller
         $user = Auth::user();
         return response()->json([
             'status' => 'success',
-            'user' => $user,
+            'user' => $user->load('notificationMethod'),
             'token' => $token,
         ]);
 
@@ -72,7 +72,7 @@ class AuthController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'User created successfully',
-            'user' => $user,
+            'user' => $user->load('notificationMethod'),
         ]);
     }
 
@@ -97,7 +97,7 @@ class AuthController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'Wallet connected successfully',
-            'user' => $user,
+            'user' => $user->load('notificationMethod'),
             'token' => $token
         ]);
     }
@@ -165,7 +165,7 @@ class AuthController extends Controller
         return response()->json([
             'status' => 'success',
             'message' => 'Profile updated successfully',
-            'user' => $user,
+            'user' => $user->load('notificationMethod'),
         ]);
     }
 
@@ -239,7 +239,7 @@ class AuthController extends Controller
                 return response ()->json ( [
                     'status'  => 'success' ,
                     'message' => 'Phone number verified successfully.' ,
-                    'user' => $user
+                    'user' => $user->load('notificationMethod')
                 ] );
             }
             else {

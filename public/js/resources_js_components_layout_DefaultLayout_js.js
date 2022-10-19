@@ -1470,21 +1470,6 @@ const cilMenu = ["512 512","<rect width='352' height='32' x='80' y='96' fill='va
 
 /***/ }),
 
-/***/ "./node_modules/@coreui/icons/js/free/cil-speedometer.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/@coreui/icons/js/free/cil-speedometer.js ***!
-  \***************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "cilSpeedometer": () => (/* binding */ cilSpeedometer)
-/* harmony export */ });
-const cilSpeedometer = ["512 512","<path fill='var(--ci-primary-color, currentColor)' d='M425.706,142.294A240,240,0,0,0,16,312v88H160V368H48V312c0-114.691,93.309-208,208-208s208,93.309,208,208v56H352v32H496V312A238.432,238.432,0,0,0,425.706,142.294Z' class='ci-primary'/><rect width='32' height='32' x='80' y='264' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='32' height='32' x='240' y='128' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='32' height='32' x='136' y='168' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><rect width='32' height='32' x='400' y='264' fill='var(--ci-primary-color, currentColor)' class='ci-primary'/><path fill='var(--ci-primary-color, currentColor)' d='M297.222,335.1l69.2-144.173-28.85-13.848L268.389,321.214A64.141,64.141,0,1,0,297.222,335.1ZM256,416a32,32,0,1,1,32-32A32.036,32.036,0,0,1,256,416Z' class='ci-primary'/>"]
-
-/***/ }),
-
 /***/ "./node_modules/@coreui/icons/js/free/cil-user.js":
 /*!********************************************************!*\
   !*** ./node_modules/@coreui/icons/js/free/cil-user.js ***!
@@ -12115,9 +12100,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @coreui/icons-react */ "./node_modules/@coreui/icons-react/dist/index.es.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-speedometer.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-description.js");
-/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/brand/cib-discord.js");
+/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/free/cil-description.js");
+/* harmony import */ var _coreui_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @coreui/icons */ "./node_modules/@coreui/icons/js/brand/cib-discord.js");
 /* harmony import */ var _coreui_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @coreui/react */ "./node_modules/@coreui/react/dist/index.es.js");
 /* harmony import */ var _helpers_authHelper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers/authHelper */ "./resources/js/components/helpers/authHelper.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
@@ -12127,19 +12111,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var _nav = [{
-  component: _coreui_react__WEBPACK_IMPORTED_MODULE_2__.CNavItem,
-  name: 'Dashboard',
-  to: '/dashboard',
-  icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_5__.cilSpeedometer,
-    customClassName: "nav-icon"
-  }) // badge: {
-  //   color: 'info',
-  //   text: 'NEW',
-  // },
-
-}, // {
+var _nav = [// {
+//   component: CNavItem,
+//   name: 'Dashboard',
+//   to: '/dashboard',
+//   icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
+//   // badge: {
+//   //   color: 'info',
+//   //   text: 'NEW',
+//   // },
+// },
+// {
 //   component: CNavTitle,
 //   name: 'Theme',
 // },
@@ -12412,7 +12394,7 @@ var _nav = [{
   name: 'Projects',
   to: '/projects',
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_6__.cilDescription,
+    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_5__.cilDescription,
     customClassName: "nav-icon"
   }),
   is_admin: 'true'
@@ -12421,7 +12403,7 @@ var _nav = [{
   name: 'Discord',
   to: '/discord',
   icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_coreui_icons_react__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_7__.cibDiscord,
+    icon: _coreui_icons__WEBPACK_IMPORTED_MODULE_6__.cibDiscord,
     customClassName: "nav-icon"
   })
 }];
@@ -13683,11 +13665,8 @@ var routes = [{
   path: '/',
   exact: true,
   name: 'Home'
-}, {
-  path: '/dashboard',
-  name: 'Dashboard',
-  element: Dashboard
-}, {
+}, // { path: '/dashboard', name: 'Dashboard', element: Dashboard },
+{
   path: '/projects',
   name: 'Projects',
   element: Projects,
@@ -14026,7 +14005,7 @@ var AppContent = function AppContent() {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
           path: "/",
           element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Navigate, {
-            to: "dashboard",
+            to: "discord",
             replace: true
           })
         })]
@@ -15587,30 +15566,41 @@ var DiscordServer = function DiscordServer() {
   var discordUser = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(function (state) {
     return state.discordUser;
   });
+  var user = (0,react_redux__WEBPACK_IMPORTED_MODULE_6__.useSelector)(function (state) {
+    return state.user;
+  });
 
   var notificationToggle = function notificationToggle(notification, channel) {
-    _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_3__["default"].post('/api/notification', {
-      server_id: channel.guild_id,
-      channel_id: channel.id,
-      last_message_id: channel.last_message_id,
-      notification: notification
-    }).then(function (response) {
-      var data = response.data;
-      var index = channels.findIndex(function (c) {
-        return c.id === channel.id;
-      });
+    if (user.notification_method && (user.notification_method.whatsapp === 1 || user.notification_method.email === 1)) {
+      if (user.country_code && user.phone_number && user.phone_verified_at || user.email && user.email_verified_at) {
+        _helpers_fetchWrapper__WEBPACK_IMPORTED_MODULE_3__["default"].post('/api/notification', {
+          server_id: channel.guild_id,
+          channel_id: channel.id,
+          last_message_id: channel.last_message_id,
+          notification: notification
+        }).then(function (response) {
+          var data = response.data;
+          var index = channels.findIndex(function (c) {
+            return c.id === channel.id;
+          });
 
-      if (data.status === 'success' && data.notification === true) {
-        channels[index].notification = true;
+          if (data.status === 'success' && data.notification === true) {
+            channels[index].notification = true;
+          } else {
+            channels[index].notification = false;
+          }
+
+          setChannels(_toConsumableArray(channels));
+        })["catch"](function (error) {
+          console.log(error);
+          (0,_helpers_common__WEBPACK_IMPORTED_MODULE_5__.swalError)('Error', 'Something went wrong');
+        });
       } else {
-        channels[index].notification = false;
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_5__.swalError)('Please add and verify your phone number or email address');
       }
-
-      setChannels(_toConsumableArray(channels));
-    })["catch"](function (error) {
-      console.log(error);
-      (0,_helpers_common__WEBPACK_IMPORTED_MODULE_5__.swalError)('Error', 'Something went wrong');
-    });
+    } else {
+      (0,_helpers_common__WEBPACK_IMPORTED_MODULE_5__.swalError)('Please turn on notification method first');
+    }
   };
 
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {

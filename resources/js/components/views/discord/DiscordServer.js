@@ -13,26 +13,35 @@ const DiscordServer = () => {
     const id = params.id;
     const [channels, setChannels] = useState([]);
     const discordUser = useSelector(state => state.discordUser);
+    const user = useSelector(state => state.user);
 
     const notificationToggle = (notification, channel) => {
-        fetchWrapper.post('/api/notification', {
-            server_id: channel.guild_id,
-            channel_id: channel.id,
-            last_message_id: channel.last_message_id,
-            notification: notification
-        }).then(response => {
-            const data = response.data;
-            const index = channels.findIndex(c => c.id === channel.id);
-            if (data.status === 'success' && data.notification === true) {
-                channels[index].notification = true;
+        if (user.notification_method && (user.notification_method.whatsapp === 1 || user.notification_method.email === 1)) {
+            if ((user.country_code && user.phone_number && user.phone_verified_at) || (user.email && user.email_verified_at)) {
+                fetchWrapper.post('/api/notification', {
+                    server_id: channel.guild_id,
+                    channel_id: channel.id,
+                    last_message_id: channel.last_message_id,
+                    notification: notification
+                }).then(response => {
+                    const data = response.data;
+                    const index = channels.findIndex(c => c.id === channel.id);
+                    if (data.status === 'success' && data.notification === true) {
+                        channels[index].notification = true;
+                    } else {
+                        channels[index].notification = false;
+                    }
+                    setChannels([...channels]);
+                }).catch(error => {
+                    console.log(error);
+                    swalError('Error', 'Something went wrong');
+                })
             } else {
-                channels[index].notification = false;
+                swalError('Please add and verify your phone number or email address');
             }
-            setChannels([...channels]);
-        }).catch(error => {
-            console.log(error);
-            swalError('Error', 'Something went wrong');
-        })
+        } else {
+            swalError('Please turn on notification method first');
+        }
     }
 
     useEffect(() => {
