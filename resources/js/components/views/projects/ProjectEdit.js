@@ -44,11 +44,11 @@ const ProjectEdit = () => {
         }).then((response) => {
             const data = response.data;
             if (data.status === 'success') {
-                swalSuccess("Project updated successfully");
+                swalSuccess(data.message);
                 navigate('/projects');
 
             } else {
-                swalError("Error updating project");
+                swalError(data.message);
             }
         }).catch((error) => {
             swalError("Error updating project");

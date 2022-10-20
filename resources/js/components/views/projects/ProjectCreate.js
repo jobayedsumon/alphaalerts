@@ -36,11 +36,11 @@ const ProjectCreate = () => {
         }).then((response) => {
             const data = response.data;
             if (data.status === 'success') {
-                swalSuccess("Project created successfully");
+                swalSuccess(data.message);
                 navigate('/projects');
 
             } else {
-                swalError("Error creating project");
+                swalError(data.message);
             }
         }).catch((error) => {
             swalError("Error creating project");

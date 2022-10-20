@@ -36,7 +36,7 @@ class ProjectController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
-                'message' => $validator->errors(),
+                'message' => $validator->errors()->first(),
             ]);
         }
 
@@ -74,14 +74,14 @@ class ProjectController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'project_name' => 'required|string|max:255',
-            'server_id' => 'required|string|max:255|unique:projects,id,' . $project->id,
+            'server_id' => 'required|string|max:255|unique:projects,server_id,' . $project->id,
             'channel_ids' => 'required|string',
         ]);
 
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
-                'message' => $validator->errors(),
+                'message' => $validator->errors()->first(),
             ]);
         }
 

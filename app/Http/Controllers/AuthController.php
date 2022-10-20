@@ -12,6 +12,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use Twilio\Rest\Client;
+use function MongoDB\BSON\toJSON;
 
 class AuthController extends Controller
 {
@@ -22,10 +23,18 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'error',
+                'message' => $validator->errors()->first(),
+            ]);
+        }
+
         $credentials = $request->only('email', 'password');
 
         $token = Auth::attempt($credentials);
@@ -56,7 +65,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
-                'message' => $validator->errors(),
+                'message' => $validator->errors()->first(),
             ]);
         }
 
@@ -85,7 +94,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Wallet address not found',
+                'message' => $validator->errors()->first(),
             ]);
         }
 
@@ -126,7 +135,7 @@ class AuthController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,id,'.$user->id,
+            'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
             'country_code' => 'required|string|max:255',
             'phone_number' => 'required|string|max:255',
         ]);
@@ -134,7 +143,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return response()->json([
                 'status' => 'error',
-                'message' => $validator->errors(),
+                'message' => $validator->errors()->first(),
             ]);
         }
 
@@ -211,7 +220,7 @@ class AuthController extends Controller
         if ( $validator->fails () ) {
             return response ()->json ( [
                 'status'  => 'error' ,
-                'message' => 'Please enter verification code.' ,
+                'message' => $validator->errors()->first() ,
             ] );
         }
 
@@ -249,7 +258,10 @@ class AuthController extends Controller
                 ] );
             }
         }catch (\Exception $ex){
-            return redirect ()->back ()->withInput ()->with ( 'errors' , 'Something went wrong.' );
+            return response ()->json ( [
+                'status'  => 'error' ,
+                'message' => 'Error occurred. Please try again.' ,
+            ] );
 
         }
     }
@@ -259,13 +271,14 @@ class AuthController extends Controller
         try {
             $user = Auth::user();
             $validator = Validator::make($request->all(), [
-                'email' => 'required|string|email|max:255|unique:users,id,'.$user->id,
+                'email' => 'required|string|email|max:255|unique:users,email,'.$user->id,
             ]);
+
 
             if ($validator->fails()) {
                 return response()->json([
                     'status' => 'error',
-                    'message' => $validator->errors(),
+                    'message' => $validator->errors()->first(),
                 ]);
             }
 

@@ -82,11 +82,11 @@ const Profile = () => {
         }).then((response) => {
             const data = response.data;
             if (data.status === 'success') {
-                swalSuccess('Profile updated successfully');
+                swalSuccess(data.message);
                 updateUserData(data);
                 navigate('/profile');
             } else {
-                swalError("Error updating profile");
+                swalError(data.message);
             }
         }).catch((error) => {
             swalError("Error updating profile");
@@ -104,7 +104,7 @@ const Profile = () => {
                 if (data.status === 'success') {
                     setVisible(true);
                 } else {
-                    swalError("Error sending verification code");
+                    swalError(data.message);
                 }
             }).catch((error) => {
                 swalError("Error sending verification code");
@@ -127,12 +127,12 @@ const Profile = () => {
         }).then((response) => {
             const data = response.data;
             if (data.status === 'success') {
-                swalSuccess("Phone number verified successfully");
+                swalSuccess(data.message);
                 updateUserData(data);
                 setVisible(false);
                 navigate('/profile');
             } else {
-                swalError("Error verifying phone number");
+                swalError(data.message);
             }
         }).catch((error) => {
             swalError("Error verifying phone number");
@@ -151,7 +151,7 @@ const Profile = () => {
                 if (data.status === 'success') {
                     swalSuccess(data.message);
                 } else {
-                    swalError("Error sending email verification link");
+                    swalError(data.message);
                 }
             }).catch((error) => {
                 swalError("Error sending email verification link");

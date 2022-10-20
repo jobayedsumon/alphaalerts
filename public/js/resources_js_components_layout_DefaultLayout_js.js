@@ -14829,11 +14829,11 @@ var Profile = function Profile() {
       var data = response.data;
 
       if (data.status === 'success') {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)('Profile updated successfully');
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)(data.message);
         updateUserData(data);
         navigate('/profile');
       } else {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error updating profile");
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)(data.message);
       }
     })["catch"](function (error) {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error updating profile");
@@ -14852,7 +14852,7 @@ var Profile = function Profile() {
         if (data.status === 'success') {
           setVisible(true);
         } else {
-          (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending verification code");
+          (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)(data.message);
         }
       })["catch"](function (error) {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending verification code");
@@ -14874,12 +14874,12 @@ var Profile = function Profile() {
       var data = response.data;
 
       if (data.status === 'success') {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)("Phone number verified successfully");
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)(data.message);
         updateUserData(data);
         setVisible(false);
         navigate('/profile');
       } else {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error verifying phone number");
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)(data.message);
       }
     })["catch"](function (error) {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error verifying phone number");
@@ -14899,7 +14899,7 @@ var Profile = function Profile() {
         if (data.status === 'success') {
           (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)(data.message);
         } else {
-          (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending email verification link");
+          (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)(data.message);
         }
       })["catch"](function (error) {
         (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error sending email verification link");
@@ -15720,10 +15720,10 @@ var ProjectCreate = function ProjectCreate() {
       var data = response.data;
 
       if (data.status === 'success') {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)("Project created successfully");
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)(data.message);
         navigate('/projects');
       } else {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error creating project");
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)(data.message);
       }
     })["catch"](function (error) {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error creating project");
@@ -15891,10 +15891,10 @@ var ProjectEdit = function ProjectEdit() {
       var data = response.data;
 
       if (data.status === 'success') {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)("Project updated successfully");
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalSuccess)(data.message);
         navigate('/projects');
       } else {
-        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error updating project");
+        (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)(data.message);
       }
     })["catch"](function (error) {
       (0,_helpers_common__WEBPACK_IMPORTED_MODULE_3__.swalError)("Error updating project");
